@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pour toi ❤️</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container" id="accueil">
+
+        <h1>Pour toi ❤️</h1>
+
+        <p>Une petite surprise rien que pour toi...</p>
+
+        <img 
+            src="./images/A662C11A-00D9-4D86-A794-98FC87D81EF0 (3).jpeg" 
+            alt="Nous"
+        >
+
+        <div class="menu">
+
+            <!-- COMPTEUR -->
+            <button class="card" onclick="afficherCompteur()">
+                <span>⏱️</span>
+                <strong>Compteur</strong>
+                <small>Notre temps ensemble</small>
+            </button>
+
+            <!-- MOT -->
+            <button class="card" onclick="afficherMot()">
+                <span>💌</span>
+                <strong>Un mot</strong>
+                <small>Un message pour toi</small>
+            </button>
+
+            <!-- SOUVENIRS -->
+            <button class="card" onclick="afficherSouvenirs()">
+                <span>📸</span>
+                <strong>Souvenirs</strong>
+                <small>Nos plus beaux moments</small>
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PAGE COMPTEUR
+    ========================== -->
+
+    <div class="container" id="pageCompteur" style="display: none;">
+
+        <h1>❤️ Nous deux ❤️</h1>
+
+        <p>Ensemble depuis le 23 juin 2026</p>
+
+        <div id="temps">
+            Chargement...
+        </div>
+
+        <button class="card retour" onclick="retourAccueil()">
+            ← Retour
+        </button>
+
+    </div>
+
+
+    <!-- =========================
+         PAGE MOT
+    ========================== -->
+
+    <div class="container" id="pageMot" style="display: none;">
+
+    <h1>💌 Un mot pour toi</h1>
+
+    <p>
+        J’entretiendrai ce site tous les jours pour te prouver mon amour.
+        <br><br>
+        Je veux qu’au fil du temps, il devienne le reflet de tout ce qu’on
+        va vivre ensemble : nos souvenirs, nos moments, nos délires,
+        nos photos et toutes ces petites choses qui nous rendent heureux.
+        <br><br>
+        Je veux pouvoir revenir ici avec toi dans quelques années et voir
+        tout le chemin qu’on aura parcouru.
+        <br><br>
+        Je t’aime. ❤️
+    </p>
+
+    <button class="card retour" onclick="retourAccueil()">
+        ← Retour
+    </button>
+
+</div>
+
+
+    <!-- =========================
+         PAGE SOUVENIRS
+    ========================== -->
+
+    <div class="container" id="pageSouvenirs" style="display: none;">
+
+    <h1>📸 Nos souvenirs</h1>
+
+    <p>Nos petits moments à nous ❤️</p>
+
+    <video controls playsinline class="souvenir-video">
+        <source src="./videos/CCFD5C18-68E2-4EE1-BE1F-282B405A847C.MOV" type="video/quicktime">
+    </video>
+
+    <button class="card retour" onclick="retourAccueil()">
+        ← Retour
+    </button>
+
+</div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        /*
+        ==================================
+        DATE DE DÉBUT DE VOTRE RELATION
+        ==================================
+        */
+
+        const dateDebut = new Date("2026-06-23T00:00:00");
+
+
+        /*
+        ==================================
+        COMPTEUR
+        ==================================
+        */
+
+        function mettreAJourCompteur() {
+
+            const maintenant = new Date();
+
+            let difference = maintenant - dateDebut;
+
+            if (difference < 0) {
+
+                document.getElementById("temps").innerHTML =
+                    "Notre histoire va bientôt commencer ❤️";
+
+                return;
+            }
+
+
+            /*
+            Calcul des secondes
+            */
+
+            let totalSecondes = Math.floor(difference / 1000);
+
+
+            /*
+            Jours
+            */
+
+            const jours = Math.floor(
+                totalSecondes / (24 * 60 * 60)
+            );
+
+            totalSecondes %= (24 * 60 * 60);
+
+
+            /*
+            Heures
+            */
+
+            const heures = Math.floor(
+                totalSecondes / (60 * 60)
+            );
+
+            totalSecondes %= (60 * 60);
+
+
+            /*
+            Minutes
+            */
+
+            const minutes = Math.floor(
+                totalSecondes / 60
+            );
+
+
+            /*
+            Secondes
+            */
+
+            const secondes = totalSecondes % 60;
+
+
+            /*
+            Affichage
+            */
+
+            document.getElementById("temps").innerHTML =
+
+                `<strong>
+                    ${jours} jours
+                </strong>
+                <br>
+                ${heures} heures
+                ${minutes} minutes
+                ${secondes} secondes ❤️`;
+
+        }
+
+
+        /*
+        ==================================
+        AFFICHER LE COMPTEUR
+        ==================================
+        */
+
+        function afficherCompteur() {
+
+            document.getElementById("accueil").style.display = "none";
+
+            document.getElementById("pageMot").style.display = "none";
+
+            document.getElementById("pageSouvenirs").style.display = "none";
+
+            document.getElementById("pageCompteur").style.display = "block";
+
+            mettreAJourCompteur();
+        }
+
+
+        /*
+        ==================================
+        AFFICHER LE MOT
+        ==================================
+        */
+
+        function afficherMot() {
+
+            document.getElementById("accueil").style.display = "none";
+
+            document.getElementById("pageCompteur").style.display = "none";
+
+            document.getElementById("pageSouvenirs").style.display = "none";
+
+            document.getElementById("pageMot").style.display = "block";
+        }
+
+
+        /*
+        ==================================
+        AFFICHER LES SOUVENIRS
+        ==================================
+        */
+
+        function afficherSouvenirs() {
+
+            document.getElementById("accueil").style.display = "none";
+
+            document.getElementById("pageCompteur").style.display = "none";
+
+            document.getElementById("pageMot").style.display = "none";
+
+            document.getElementById("pageSouvenirs").style.display = "block";
+        }
+
+
+        /*
+        ==================================
+        RETOUR À L'ACCUEIL
+        ==================================
+        */
+
+        function retourAccueil() {
+
+            document.getElementById("pageCompteur").style.display = "none";
+
+            document.getElementById("pageMot").style.display = "none";
+
+            document.getElementById("pageSouvenirs").style.display = "none";
+
+            document.getElementById("accueil").style.display = "block";
+        }
+
+
+        /*
+        ==================================
+        ACTUALISATION CHAQUE SECONDE
+        ==================================
+        */
+
+        setInterval(mettreAJourCompteur, 1000);
+
+    </script>
+
+</body>
+
+</html>
