@@ -297,121 +297,176 @@ p {
 
 
 /* =====================================================
-   CHATS
+   PETITS CHATS SUR LE FOND ROSE
 ===================================================== */
 
-#accueil {
-    position: relative;
-}
-
-
 .chats-decoration {
-
-    position: absolute;
-
-    inset: -20px;
-
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
     pointer-events: none;
-
-    z-index: 5;
-
+    z-index: 0;
+    overflow: hidden;
 }
-
 
 .chat {
-
     position: absolute;
 
-    font-size: 34px;
+    font-size: 38px;
 
     filter:
         drop-shadow(
             0 5px 8px
-            rgba(90,20,50,0.18)
+            rgba(90, 20, 50, 0.15)
         );
 
     animation:
-        chatFlotte 3s ease-in-out infinite;
-
+        chatFlotte 4s ease-in-out infinite;
 }
 
+
+/* =========================
+   POSITION DES CHATS
+========================= */
 
 .chat1 {
-    top: 15px;
-    left: -25px;
-    font-size: 40px;
+    top: 8%;
+    left: 7%;
 }
 
-
 .chat2 {
-    top: 65px;
-    right: -30px;
-    font-size: 32px;
+    top: 15%;
+    right: 8%;
     animation-delay: .5s;
 }
 
-
 .chat3 {
-    top: 210px;
-    left: -38px;
-    font-size: 30px;
+    top: 32%;
+    left: 3%;
     animation-delay: 1s;
 }
 
-
 .chat4 {
-    top: 270px;
-    right: -35px;
-    font-size: 42px;
+    top: 38%;
+    right: 4%;
     animation-delay: 1.5s;
 }
 
-
 .chat5 {
-    top: 420px;
-    left: -30px;
-    font-size: 34px;
+    top: 55%;
+    left: 6%;
     animation-delay: 2s;
 }
 
-
 .chat6 {
-    top: 470px;
-    right: -30px;
-    font-size: 30px;
+    top: 60%;
+    right: 6%;
     animation-delay: 2.5s;
 }
 
-
 .chat7 {
-    bottom: 100px;
-    left: -35px;
-    font-size: 38px;
+    bottom: 18%;
+    left: 10%;
     animation-delay: .7s;
 }
 
-
 .chat8 {
-    bottom: 80px;
-    right: -35px;
-    font-size: 35px;
+    bottom: 12%;
+    right: 10%;
     animation-delay: 1.8s;
 }
 
-
 .chat9 {
-    bottom: 20px;
-    left: 45px;
-    font-size: 28px;
+    bottom: 5%;
+    left: 35%;
+    font-size: 30px;
     animation-delay: 2.8s;
 }
 
-
 .chat10 {
-    bottom: 15px;
-    right: 45px;
-    font-size: 28px;
+    bottom: 6%;
+    right: 35%;
+    font-size: 30px;
     animation-delay: 1.2s;
+}
+
+
+/* =========================
+   ANIMATION
+========================= */
+
+@keyframes chatFlotte {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-12px)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .chat {
+        font-size: 28px;
+    }
+
+    .chat1 {
+        left: 3%;
+    }
+
+    .chat2 {
+        right: 3%;
+    }
+
+    .chat3 {
+        left: 2%;
+    }
+
+    .chat4 {
+        right: 2%;
+    }
+
+    .chat5 {
+        left: 3%;
+    }
+
+    .chat6 {
+        right: 3%;
+    }
+
+    .chat7 {
+        left: 5%;
+    }
+
+    .chat8 {
+        right: 5%;
+    }
+
+    .chat9 {
+        left: 25%;
+    }
+
+    .chat10 {
+        right: 25%;
+    }
 }
 
 
