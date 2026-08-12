@@ -1,497 +1,296 @@
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-
-    margin: 0;
-
-    min-height: 100vh;
-
-    display: flex;
-
-    justify-content: center;
-
-    align-items: center;
-
-    background:
-
-        radial-gradient(
-            ellipse at 15% 20%,
-            rgba(255,255,255,0.9) 0%,
-            transparent 28%
-        ),
-
-        radial-gradient(
-            ellipse at 85% 75%,
-            rgba(255,255,255,0.75) 0%,
-            transparent 30%
-        ),
-
-        linear-gradient(
-            135deg,
-            #f8d1df 0%,
-            #efa9c3 25%,
-            #fbe5ed 45%,
-            #e99bb8 65%,
-            #f8cada 100%
-        );
-
-    color: #4a1c30;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    text-align: center;
-
-    padding: 25px;
-
-    overflow-x: hidden;
-
-}
-
-
 
 /* =====================================================
-   CŒURS FLOTTANTS
+   RESET
 ===================================================== */
 
-.floating-hearts span {
-
-    position: fixed;
-
-    color: rgba(255,255,255,0.65);
-
-    font-size: 25px;
-
-    animation:
-        coeurFloat 6s ease-in-out infinite;
-
-    pointer-events: none;
-
-    z-index: 0;
-
+* {
+	box-sizing: border-box;
 }
-
-
-.floating-hearts span:nth-child(1) {
-    left: 8%;
-    top: 15%;
-}
-
-
-.floating-hearts span:nth-child(2) {
-    left: 85%;
-    top: 20%;
-    animation-delay: 1s;
-}
-
-
-.floating-hearts span:nth-child(3) {
-    left: 12%;
-    bottom: 20%;
-    animation-delay: 2s;
-}
-
-
-.floating-hearts span:nth-child(4) {
-    right: 10%;
-    bottom: 15%;
-    animation-delay: 3s;
-}
-
-
-.floating-hearts span:nth-child(5) {
-    left: 50%;
-    top: 8%;
-    animation-delay: 4s;
-}
-
-
-@keyframes coeurFloat {
-
-    0%,
-    100% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            translateY(-15px)
-            rotate(5deg);
-    }
-
-}
-
 
 
 /* =====================================================
-   CONTENEUR
+   PAGE
+===================================================== */
+
+body {
+	margin: 0;
+	min-height: 100vh;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: relative;
+
+	background:
+		radial-gradient(
+			ellipse at 15% 20%,
+			rgba(255, 255, 255, 0.85) 0%,
+			transparent 28%
+		),
+		radial-gradient(
+			ellipse at 85% 75%,
+			rgba(255, 255, 255, 0.7) 0%,
+			transparent 30%
+		),
+		linear-gradient(
+			135deg,
+			#f8d1df 0%,
+			#efa9c3 25%,
+			#fbe5ed 45%,
+			#e99bb8 65%,
+			#f8cada 100%
+		);
+
+	color: #4a1c30;
+
+	font-family: Arial, sans-serif;
+
+	text-align: center;
+
+	padding: 25px;
+
+	overflow-x: hidden;
+}
+
+
+/* =====================================================
+   PETITS CHATS
+===================================================== */
+
+.chats-decoration {
+	position: fixed;
+
+	inset: 0;
+
+	width: 100%;
+	height: 100%;
+
+	pointer-events: none;
+
+	overflow: hidden;
+
+	z-index: 1;
+}
+
+
+/* CHAT */
+
+.chat {
+	position: absolute;
+
+	font-size: 38px;
+
+	user-select: none;
+
+	filter:
+		drop-shadow(
+			0 5px 8px
+			rgba(90, 20, 50, 0.18)
+		);
+
+	animation:
+		chatFlotte 4s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   POSITION DES CHATS
+===================================================== */
+
+.chat1 {
+	top: 4%;
+	left: 25%;
+}
+
+.chat2 {
+	top: 8%;
+	right: 23%;
+
+	animation-delay: 0.6s;
+}
+
+.chat3 {
+	top: 25%;
+	left: 3%;
+
+	animation-delay: 1.2s;
+}
+
+.chat4 {
+	top: 27%;
+	right: 3%;
+
+	animation-delay: 1.8s;
+}
+
+.chat5 {
+	top: 47%;
+	left: 2%;
+
+	animation-delay: 0.8s;
+}
+
+.chat6 {
+	top: 48%;
+	right: 2%;
+
+	animation-delay: 2.2s;
+}
+
+.chat7 {
+	bottom: 22%;
+	left: 20%;
+
+	animation-delay: 1.5s;
+}
+
+.chat8 {
+	bottom: 20%;
+	right: 20%;
+
+	animation-delay: 2.8s;
+}
+
+.chat9 {
+	bottom: 5%;
+	left: 38%;
+
+	font-size: 32px;
+
+	animation-delay: 1s;
+}
+
+.chat10 {
+	bottom: 6%;
+	right: 38%;
+
+	font-size: 32px;
+
+	animation-delay: 2s;
+}
+
+
+/* =====================================================
+   ANIMATION DES CHATS
+===================================================== */
+
+@keyframes chatFlotte {
+
+	0% {
+		transform:
+			translateY(0)
+			rotate(-5deg);
+	}
+
+	50% {
+		transform:
+			translateY(-12px)
+			rotate(5deg);
+	}
+
+	100% {
+		transform:
+			translateY(0)
+			rotate(-5deg);
+	}
+}
+
+
+/* =====================================================
+   CONTENEUR PRINCIPAL
 ===================================================== */
 
 .container {
+	width: 100%;
 
-    width: 100%;
+	max-width: 500px;
 
-    max-width: 500px;
+	padding: 35px 25px;
 
-    padding: 35px 25px;
+	position: relative;
 
-    background:
-        rgba(255,255,255,0.34);
+	z-index: 5;
 
-    backdrop-filter:
-        blur(15px);
+	background:
+		rgba(255, 255, 255, 0.38);
 
-    -webkit-backdrop-filter:
-        blur(15px);
+	backdrop-filter:
+		blur(15px);
 
-    border-radius: 30px;
+	-webkit-backdrop-filter:
+		blur(15px);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.7);
+	border-radius: 30px;
 
-    box-shadow:
-        0 20px 50px
-        rgba(100,20,50,0.18);
+	border:
+		1px solid
+		rgba(255, 255, 255, 0.70);
 
-    position: relative;
-
-    z-index: 2;
-
-    animation:
-        apparition 0.5s ease;
-
+	box-shadow:
+		0 20px 50px
+		rgba(100, 20, 50, 0.20);
 }
-
-
-@keyframes apparition {
-
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-}
-
 
 
 /* =====================================================
-   TITRES
+   TITRE
 ===================================================== */
 
 h1 {
+	margin:
+		0 0 12px 0;
 
-    margin:
-        0 0 12px;
+	font-size: 38px;
 
-    font-size:
-        38px;
+	color: #4a1c30;
 
-    color:
-        #4a1c30;
-
-    font-weight:
-        700;
-
+	font-weight: 700;
 }
 
 
-h2 {
-
-    color:
-        #5b263c;
-
-    font-size:
-        20px;
-
-}
-
+/* =====================================================
+   TEXTE
+===================================================== */
 
 p {
+	margin:
+		0 0 30px 0;
 
-    margin:
-        0 0 30px;
+	font-size: 18px;
 
-    font-size:
-        18px;
+	line-height: 1.5;
 
-    line-height:
-        1.6;
-
-    color:
-        #6b354b;
-
+	color: #6b354b;
 }
-
-
-.heart-title {
-
-    font-size:
-        35px;
-
-    animation:
-        coeurPulse 2s infinite;
-
-}
-
-
-@keyframes coeurPulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
-
-}
-
 
 
 /* =====================================================
    PHOTO
 ===================================================== */
 
-.photo-principale {
+.container img {
+	display: block;
 
-    display: block;
+	width: 280px;
 
-    width: 280px;
+	max-width: 90%;
 
-    max-width: 90%;
+	height: auto;
 
-    height: auto;
+	margin:
+		0 auto 30px auto;
 
-    margin:
-        0 auto 30px;
+	border-radius: 20px;
 
-    border-radius:
-        22px;
+	border:
+		4px solid
+		rgba(255, 255, 255, 0.75);
 
-    border:
-        4px solid
-        rgba(255,255,255,0.8);
-
-    box-shadow:
-        0 12px 30px
-        rgba(90,20,50,0.25);
-
+	box-shadow:
+		0 12px 30px
+		rgba(90, 20, 50, 0.25);
 }
-
-
-
-/* =====================================================
-   PETITS CHATS SUR LE FOND ROSE
-===================================================== */
-
-.chats-decoration {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.chat {
-    position: absolute;
-
-    font-size: 38px;
-
-    filter:
-        drop-shadow(
-            0 5px 8px
-            rgba(90, 20, 50, 0.15)
-        );
-
-    animation:
-        chatFlotte 4s ease-in-out infinite;
-}
-
-
-/* =========================
-   POSITION DES CHATS
-========================= */
-
-.chat1 {
-    top: 8%;
-    left: 7%;
-}
-
-.chat2 {
-    top: 15%;
-    right: 8%;
-    animation-delay: .5s;
-}
-
-.chat3 {
-    top: 32%;
-    left: 3%;
-    animation-delay: 1s;
-}
-
-.chat4 {
-    top: 38%;
-    right: 4%;
-    animation-delay: 1.5s;
-}
-
-.chat5 {
-    top: 55%;
-    left: 6%;
-    animation-delay: 2s;
-}
-
-.chat6 {
-    top: 60%;
-    right: 6%;
-    animation-delay: 2.5s;
-}
-
-.chat7 {
-    bottom: 18%;
-    left: 10%;
-    animation-delay: .7s;
-}
-
-.chat8 {
-    bottom: 12%;
-    right: 10%;
-    animation-delay: 1.8s;
-}
-
-.chat9 {
-    bottom: 5%;
-    left: 35%;
-    font-size: 30px;
-    animation-delay: 2.8s;
-}
-
-.chat10 {
-    bottom: 6%;
-    right: 35%;
-    font-size: 30px;
-    animation-delay: 1.2s;
-}
-
-
-/* =========================
-   ANIMATION
-========================= */
-
-@keyframes chatFlotte {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            translateY(-12px)
-            rotate(5deg);
-    }
-
-    100% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 600px) {
-
-    .chat {
-        font-size: 28px;
-    }
-
-    .chat1 {
-        left: 3%;
-    }
-
-    .chat2 {
-        right: 3%;
-    }
-
-    .chat3 {
-        left: 2%;
-    }
-
-    .chat4 {
-        right: 2%;
-    }
-
-    .chat5 {
-        left: 3%;
-    }
-
-    .chat6 {
-        right: 3%;
-    }
-
-    .chat7 {
-        left: 5%;
-    }
-
-    .chat8 {
-        right: 5%;
-    }
-
-    .chat9 {
-        left: 25%;
-    }
-
-    .chat10 {
-        right: 25%;
-    }
-}
-
-
-@keyframes chatFlotte {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(-4deg);
-    }
-
-    50% {
-        transform:
-            translateY(-10px)
-            rotate(4deg);
-    }
-
-    100% {
-        transform:
-            translateY(0)
-            rotate(-4deg);
-    }
-
-}
-
 
 
 /* =====================================================
@@ -499,792 +298,207 @@ p {
 ===================================================== */
 
 .menu {
+	display: flex;
 
-    display:
-        flex;
+	flex-direction: column;
 
-    flex-direction:
-        column;
+	gap: 15px;
 
-    gap:
-        15px;
-
-    width:
-        100%;
-
+	width: 100%;
 }
 
 
-
 /* =====================================================
-   CARTES
+   CARTES / BOUTONS
 ===================================================== */
 
 .card {
+	width: 100%;
 
-    width:
-        100%;
+	min-height: 80px;
 
-    min-height:
-        80px;
+	padding:
+		16px 20px;
 
-    padding:
-        16px 20px;
+	display: grid;
 
-    display:
-        grid;
+	grid-template-columns: 55px 1fr;
 
-    grid-template-columns:
-        55px 1fr;
+	grid-template-rows:
+		auto auto;
 
-    grid-template-rows:
-        auto auto;
+	column-gap: 12px;
 
-    column-gap:
-        12px;
+	text-align: left;
 
-    text-align:
-        left;
+	background:
+		rgba(255, 255, 255, 0.70);
 
-    background:
-        rgba(255,255,255,0.68);
+	color: #4a1c30;
 
-    color:
-        #4a1c30;
+	border:
+		1px solid
+		rgba(255, 255, 255, 0.90);
 
-    border:
-        1px solid
-        rgba(255,255,255,0.85);
+	border-radius: 22px;
 
-    border-radius:
-        22px;
+	box-shadow:
+		0 8px 20px
+		rgba(100, 20, 50, 0.12);
 
-    box-shadow:
-        0 8px 20px
-        rgba(100,20,50,0.12);
+	cursor: pointer;
 
-    cursor:
-        pointer;
-
-    transition:
-        transform .25s ease,
-        box-shadow .25s ease,
-        background .25s ease;
-
-    font-family:
-        Arial,
-        sans-serif;
-
+	transition:
+		transform 0.25s ease,
+		box-shadow 0.25s ease,
+		background 0.25s ease;
 }
 
 
-.card:hover {
-
-    transform:
-        translateY(-4px)
-        scale(1.02);
-
-    background:
-        rgba(255,255,255,0.9);
-
-    box-shadow:
-        0 14px 30px
-        rgba(100,20,50,0.18);
-
-}
-
-
-.card:active {
-
-    transform:
-        scale(.97);
-
-}
-
+/* =====================================================
+   ICÔNE DES CARTES
+===================================================== */
 
 .card span {
+	grid-row: 1 / 3;
 
-    grid-row:
-        1 / 3;
+	display: flex;
 
-    display:
-        flex;
+	justify-content: center;
 
-    justify-content:
-        center;
+	align-items: center;
 
-    align-items:
-        center;
-
-    font-size:
-        32px;
-
+	font-size: 32px;
 }
 
+
+/* =====================================================
+   TITRE DES CARTES
+===================================================== */
 
 .card strong {
+	align-self: end;
 
-    align-self:
-        end;
+	font-size: 18px;
 
-    font-size:
-        18px;
-
-    color:
-        #4a1c30;
-
+	color: #4a1c30;
 }
 
+
+/* =====================================================
+   SOUS-TITRE
+===================================================== */
 
 .card small {
+	margin-top: 4px;
 
-    margin-top:
-        4px;
+	font-size: 14px;
 
-    font-size:
-        14px;
-
-    color:
-        #8c5268;
-
+	color: #8c5268;
 }
 
 
-
 /* =====================================================
-   RETOUR
+   HOVER
 ===================================================== */
 
-.retour {
+.card:hover {
+	transform:
+		translateY(-4px)
+		scale(1.02);
 
-    margin-top:
-        25px;
+	background:
+		rgba(255, 255, 255, 0.90);
 
-    min-height:
-        50px;
-
-    width:
-        auto;
-
-    min-width:
-        100px;
-
-    display:
-        inline-flex;
-
-    justify-content:
-        center;
-
-    align-items:
-        center;
-
-    grid-template-columns:
-        1fr;
-
-    text-align:
-        center;
-
-    padding:
-        10px 18px;
-
+	box-shadow:
+		0 14px 30px
+		rgba(100, 20, 50, 0.18);
 }
 
 
-
 /* =====================================================
-   PAGE ICON
+   CLIC
 ===================================================== */
 
-.page-icon {
-
-    font-size:
-        45px;
-
-    margin-bottom:
-        10px;
-
+.card:active {
+	transform:
+		scale(0.97);
 }
 
 
-
 /* =====================================================
-   COMPTEUR
+   TEMPS / COMPTEUR
 ===================================================== */
 
 #temps {
+	margin:
+		25px 0;
 
-    margin:
-        30px 0;
+	padding:
+		25px 15px;
 
-    padding:
-        25px;
+	background:
+		rgba(255, 255, 255, 0.50);
 
-    background:
-        rgba(255,255,255,0.55);
+	border-radius: 20px;
 
-    border-radius:
-        25px;
+	font-size: 18px;
 
-    box-shadow:
-        0 8px 20px
-        rgba(100,20,50,0.1);
+	line-height: 1.8;
 
+	color: #6b354b;
 }
 
+#temps strong {
+	font-size: 30px;
 
-.compteur-grand {
-
-    font-size:
-        48px;
-
-    font-weight:
-        bold;
-
-    color:
-        #7c304e;
-
+	color: #4a1c30;
 }
-
-
-.compteur-grand span {
-
-    display:
-        block;
-
-    font-size:
-        18px;
-
-    font-weight:
-        normal;
-
-}
-
-
-.compteur-petit {
-
-    margin-top:
-        12px;
-
-    font-size:
-        16px;
-
-}
-
 
 
 /* =====================================================
-   MESSAGE
-===================================================== */
-
-.message-box {
-
-    padding:
-        25px;
-
-    background:
-        rgba(255,255,255,0.55);
-
-    border:
-        1px solid
-        rgba(255,255,255,0.8);
-
-    border-radius:
-        25px;
-
-    box-shadow:
-        0 8px 20px
-        rgba(100,20,50,0.1);
-
-}
-
-
-.message-box p {
-
-    margin:
-        0;
-
-    font-size:
-        17px;
-
-}
-
-
-
-/* =====================================================
-   TEXTAREA
-===================================================== */
-
-.mot-input {
-
-    width:
-        100%;
-
-    min-height:
-        160px;
-
-    padding:
-        18px;
-
-    resize:
-        vertical;
-
-    border:
-        2px solid
-        rgba(255,255,255,0.8);
-
-    border-radius:
-        20px;
-
-    background:
-        rgba(255,255,255,0.7);
-
-    color:
-        #4a1c30;
-
-    font-size:
-        16px;
-
-    font-family:
-        Arial,
-        sans-serif;
-
-    outline:
-        none;
-
-}
-
-
-.mot-input:focus {
-
-    border-color:
-        #df86a7;
-
-    box-shadow:
-        0 0 0 4px
-        rgba(223,134,167,0.15);
-
-}
-
-
-.compteur-caracteres {
-
-    text-align:
-        right;
-
-    margin:
-        8px 5px 15px;
-
-    color:
-        #8c5268;
-
-    font-size:
-        13px;
-
-}
-
-
-
-/* =====================================================
-   BOUTON PRINCIPAL
-===================================================== */
-
-.main-button {
-
-    width:
-        100%;
-
-    border:
-        none;
-
-    border-radius:
-        20px;
-
-    padding:
-        16px;
-
-    background:
-        rgba(255,255,255,0.8);
-
-    color:
-        #5b263c;
-
-    font-size:
-        16px;
-
-    font-weight:
-        bold;
-
-    cursor:
-        pointer;
-
-    box-shadow:
-        0 8px 20px
-        rgba(100,20,50,0.12);
-
-    transition:
-        .2s;
-
-}
-
-
-.main-button:hover {
-
-    transform:
-        translateY(-2px);
-
-    background:
-        white;
-
-}
-
-
-
-/* =====================================================
-   STATUS
-===================================================== */
-
-.status-message {
-
-    min-height:
-        25px;
-
-    margin:
-        15px 0;
-
-    font-weight:
-        bold;
-
-}
-
-
-.status-message.succes {
-    color: #47724e;
-}
-
-
-.status-message.erreur {
-    color: #a33b55;
-}
-
-
-
-/* =====================================================
-   MOTS
-===================================================== */
-
-.anciens-mots {
-
-    margin-top:
-        30px;
-
-}
-
-
-.mot-card {
-
-    position:
-        relative;
-
-    text-align:
-        left;
-
-    padding:
-        18px;
-
-    margin-bottom:
-        12px;
-
-    background:
-        rgba(255,255,255,0.6);
-
-    border-radius:
-        20px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.8);
-
-}
-
-
-.mot-date {
-
-    font-size:
-        12px;
-
-    color:
-        #9b6176;
-
-    margin-bottom:
-        8px;
-
-}
-
-
-.mot-texte {
-
-    padding-right:
-        25px;
-
-    line-height:
-        1.5;
-
-    white-space:
-        pre-wrap;
-
-}
-
-
-.mot-coeur {
-
-    position:
-        absolute;
-
-    right:
-        15px;
-
-    top:
-        15px;
-
-}
-
-
-
-/* =====================================================
-   VIDEO
+   VIDÉO SOUVENIR
 ===================================================== */
 
 .souvenir-video {
+	width: 100%;
 
-    width:
-        100%;
+	max-width: 450px;
 
-    border-radius:
-        22px;
+	border-radius: 20px;
 
-    display:
-        block;
+	box-shadow:
+		0 12px 30px
+		rgba(90, 20, 50, 0.25);
 
-    box-shadow:
-        0 12px 30px
-        rgba(90,20,50,0.2);
-
+	margin-bottom: 20px;
 }
-
 
 
 /* =====================================================
-   HUMEUR
+   BOUTON RETOUR
 ===================================================== */
 
-.humeur-section {
+.retour {
+	position: fixed;
 
-    margin-bottom:
-        25px;
+	bottom: 15px;
 
-    padding:
-        18px;
+	left: 15px;
 
-    background:
-        rgba(255,255,255,0.38);
+	width: auto;
 
-    border-radius:
-        25px;
+	min-width: 75px;
 
+	padding:
+		7px 12px;
+
+	font-size: 12px;
+
+	border-radius: 12px;
+
+	z-index: 1000;
 }
-
-
-.humeur-section h2 {
-
-    margin-top:
-        0;
-
-}
-
-
-.humeur-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(5, 1fr);
-
-    gap:
-        7px;
-
-}
-
-
-.humeur {
-
-    border:
-        1px solid
-        rgba(255,255,255,0.8);
-
-    border-radius:
-        17px;
-
-    padding:
-        10px 4px;
-
-    background:
-        rgba(255,255,255,0.65);
-
-    cursor:
-        pointer;
-
-    font-size:
-        25px;
-
-    transition:
-        .2s;
-
-}
-
-
-.humeur:hover {
-
-    transform:
-        translateY(-3px)
-        scale(1.05);
-
-    background:
-        rgba(255,255,255,0.9);
-
-}
-
-
-.humeur small {
-
-    display:
-        block;
-
-    margin-top:
-        4px;
-
-    font-size:
-        9px;
-
-    color:
-        #7d465b;
-
-}
-
-
-.humeur-selection {
-
-    margin-top:
-        12px;
-
-    min-height:
-        25px;
-
-    font-size:
-        25px;
-
-}
-
-
-.humeur-selection span {
-
-    font-size:
-        13px;
-
-    color:
-        #7d465b;
-
-}
-
-
-
-/* =====================================================
-   HISTORIQUE
-===================================================== */
-
-.historique-card {
-
-    margin-bottom:
-        15px;
-
-    padding:
-        18px;
-
-    text-align:
-        left;
-
-    background:
-        rgba(255,255,255,0.58);
-
-    border-radius:
-        22px;
-
-    border:
-        1px solid
-        rgba(255,255,255,0.8);
-
-}
-
-
-.historique-date {
-
-    text-align:
-        center;
-
-    font-weight:
-        bold;
-
-    color:
-        #7c304e;
-
-    margin-bottom:
-        15px;
-
-}
-
-
-.historique-ligne {
-
-    display:
-        flex;
-
-    justify-content:
-        space-between;
-
-    padding:
-        8px 0;
-
-    border-bottom:
-        1px solid
-        rgba(120,60,80,0.08);
-
-}
-
-
-.historique-ligne:last-child {
-
-    border-bottom:
-        none;
-
-}
-
-
-.vide {
-
-    padding:
-        25px;
-
-    background:
-        rgba(255,255,255,0.5);
-
-    border-radius:
-        20px;
-
-    color:
-        #7d465b;
-
-}
-
 
 
 /* =====================================================
@@ -1293,238 +507,149 @@ p {
 
 @media (max-width: 600px) {
 
-    body {
+	body {
+		padding: 15px;
+	}
 
-        padding:
-            15px;
 
-        align-items:
-            flex-start;
+	/* =========================
+	   CARTE
+	========================= */
 
-        padding-top:
-            20px;
+	.container {
+		padding:
+			28px 18px;
 
-        padding-bottom:
-            20px;
+		border-radius: 25px;
+	}
 
-    }
 
+	/* =========================
+	   TITRE
+	========================= */
 
-    .container {
+	h1 {
+		font-size: 30px;
+	}
 
-        padding:
-            28px 18px;
 
-        border-radius:
-            25px;
+	/* =========================
+	   TEXTE
+	========================= */
 
-    }
+	p {
+		font-size: 16px;
 
+		margin-bottom: 25px;
+	}
 
-    h1 {
 
-        font-size:
-            30px;
+	/* =========================
+	   PHOTO
+	========================= */
 
-    }
+	.container img {
+		width: 240px;
 
+		margin-bottom: 25px;
+	}
 
-    p {
 
-        font-size:
-            16px;
+	/* =========================
+	   CARTES
+	========================= */
 
-        margin-bottom:
-            25px;
+	.card {
+		min-height: 75px;
 
-    }
+		padding:
+			14px 16px;
+	}
 
 
-    .photo-principale {
+	.card span {
+		font-size: 28px;
+	}
 
-        width:
-            240px;
 
-        margin-bottom:
-            25px;
+	.card strong {
+		font-size: 17px;
+	}
 
-    }
 
+	.card small {
+		font-size: 13px;
+	}
 
-    .card {
 
-        min-height:
-            75px;
+	/* =========================
+	   CHATS
+	========================= */
 
-        padding:
-            14px 16px;
+	.chat {
+		font-size: 27px;
+	}
 
-    }
+	.chat1 {
+		top: 3%;
+		left: 18%;
+	}
 
 
-    .card span {
+	.chat2 {
+		top: 5%;
+		right: 18%;
+	}
 
-        font-size:
-            28px;
 
-    }
+	.chat3 {
+		top: 23%;
+		left: 1%;
+	}
 
 
-    .card strong {
+	.chat4 {
+		top: 25%;
+		right: 1%;
+	}
 
-        font-size:
-            17px;
 
-    }
+	.chat5 {
+		top: 47%;
+		left: 0;
+	}
 
 
-    .card small {
+	.chat6 {
+		top: 48%;
+		right: 0;
+	}
 
-        font-size:
-            13px;
 
-    }
+	.chat7 {
+		bottom: 19%;
+		left: 12%;
+	}
 
 
-    .chat {
+	.chat8 {
+		bottom: 18%;
+		right: 12%;
+	}
 
-        font-size:
-            26px;
 
-    }
+	.chat9 {
+		bottom: 4%;
+		left: 30%;
 
+		font-size: 25px;
+	}
 
-    .chat1 {
 
-        left:
-            -10px;
+	.chat10 {
+		bottom: 4%;
+		right: 30%;
 
-        top:
-            10px;
-
-    }
-
-
-    .chat2 {
-
-        right:
-            -10px;
-
-        top:
-            60px;
-
-    }
-
-
-    .chat3 {
-
-        left:
-            -12px;
-
-        top:
-            190px;
-
-    }
-
-
-    .chat4 {
-
-        right:
-            -12px;
-
-        top:
-            250px;
-
-    }
-
-
-    .chat5 {
-
-        left:
-            -10px;
-
-        top:
-            390px;
-
-    }
-
-
-    .chat6 {
-
-        right:
-            -10px;
-
-        top:
-            430px;
-
-    }
-
-
-    .chat7 {
-
-        left:
-            -12px;
-
-        bottom:
-            100px;
-
-    }
-
-
-    .chat8 {
-
-        right:
-            -12px;
-
-        bottom:
-            80px;
-
-    }
-
-
-    .chat9 {
-
-        left:
-            30px;
-
-        bottom:
-            15px;
-
-    }
-
-
-    .chat10 {
-
-        right:
-            30px;
-
-        bottom:
-            15px;
-
-    }
-
-
-    .humeur-grid {
-
-        grid-template-columns:
-            repeat(3, 1fr);
-
-    }
-
-
-    .humeur {
-
-        font-size:
-            27px;
-
-    }
-
-
-    .compteur-grand {
-
-        font-size:
-            40px;
-
-    }
-
+		font-size: 25px;
+	}
 }
