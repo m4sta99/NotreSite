@@ -826,21 +826,14 @@
 </div>
 
 
-
 <!-- =====================================================
      JAVASCRIPT
 ===================================================== -->
 
 <script>
 
-
-/* =====================================================
-   SUPABASE
-===================================================== */
-
 const SUPABASE_URL =
     "https://mmlidxodagqtkzdtyjjk.supabase.co";
-
 
 const SUPABASE_KEY =
     "sb_publishable_uQayonDwge9CzFP44nnAaQ_LOweNezR";
@@ -854,15 +847,11 @@ const dateDebut =
     new Date("2026-06-23T00:00:00");
 
 
-
 /* =====================================================
-   FONCTION SUPABASE
+   SUPABASE
 ===================================================== */
 
-async function supabaseFetch(
-    table,
-    options = {}
-) {
+async function supabaseFetch(table, options = {}) {
 
     const {
         method = "GET",
@@ -870,37 +859,25 @@ async function supabaseFetch(
         body = null
     } = options;
 
-
     const response = await fetch(
         `${SUPABASE_URL}/rest/v1/${table}${query}`,
         {
-
-            method,
+            method: method,
 
             headers: {
-
-                "apikey":
-                    SUPABASE_KEY,
-
-                "Authorization":
-                    `Bearer ${SUPABASE_KEY}`,
-
-                "Content-Type":
-                    "application/json",
-
-                "Prefer":
-                    "return=representation"
-
+                "apikey": SUPABASE_KEY,
+                "Authorization": `Bearer ${SUPABASE_KEY}`,
+                "Content-Type": "application/json",
+                "Prefer": method === "POST"
+                    ? "resolution=merge-duplicates,return=representation"
+                    : "return=representation"
             },
 
-            body:
-                body
-                    ? JSON.stringify(body)
-                    : null
-
+            body: body
+                ? JSON.stringify(body)
+                : null
         }
     );
-
 
     if (!response.ok) {
 
@@ -908,29 +885,24 @@ async function supabaseFetch(
             await response.text();
 
         throw new Error(erreur);
-
     }
-
 
     const texte =
         await response.text();
 
-
     return texte
         ? JSON.parse(texte)
         : [];
-
 }
 
 
 /* =====================================================
-   AFFICHAGE DES PAGES
+   NAVIGATION
 ===================================================== */
 
 function cacherToutesLesPages() {
 
     const pages = [
-
         "accueil",
         "pageCompteur",
         "pageMenuMots",
@@ -939,9 +911,7 @@ function cacherToutesLesPages() {
         "pageSouvenirs",
         "pageHumeur",
         "pageHistorique"
-
     ];
-
 
     pages.forEach(id => {
 
@@ -949,14 +919,9 @@ function cacherToutesLesPages() {
             document.getElementById(id);
 
         if (element) {
-
-            element.style.display =
-                "none";
-
+            element.style.display = "none";
         }
-
     });
-
 }
 
 
@@ -964,18 +929,20 @@ function afficherPage(id) {
 
     cacherToutesLesPages();
 
-    document.getElementById(id).style.display =
-        "block";
+    const page =
+        document.getElementById(id);
+
+    if (page) {
+        page.style.display = "block";
+    }
 
     window.scrollTo(0, 0);
-
 }
 
 
 function retourAccueil() {
 
     afficherPage("accueil");
-
 }
 
 
@@ -985,76 +952,58 @@ function retourAccueil() {
 
 function mettreAJourCompteur() {
 
+    const element =
+        document.getElementById("temps");
+
+    if (!element) return;
+
     const maintenant =
         new Date();
-
 
     let difference =
         maintenant - dateDebut;
 
-
     if (difference < 0) {
 
-        document.getElementById("temps").innerHTML =
+        element.innerHTML =
             "Notre histoire va bientôt commencer ❤️";
 
         return;
-
     }
-
 
     let totalSecondes =
         Math.floor(difference / 1000);
 
-
     const jours =
-        Math.floor(
-            totalSecondes / 86400
-        );
-
+        Math.floor(totalSecondes / 86400);
 
     totalSecondes %= 86400;
 
-
     const heures =
-        Math.floor(
-            totalSecondes / 3600
-        );
-
+        Math.floor(totalSecondes / 3600);
 
     totalSecondes %= 3600;
 
-
     const minutes =
-        Math.floor(
-            totalSecondes / 60
-        );
-
+        Math.floor(totalSecondes / 60);
 
     const secondes =
         totalSecondes % 60;
 
-
-    document.getElementById("temps").innerHTML = `
+    element.innerHTML = `
 
         <div class="compteur-grand">
-
             ${jours}
-
             <span>jours</span>
-
         </div>
 
         <div class="compteur-petit">
-
             ${heures} heures
             ${minutes} minutes
             ${secondes} secondes ❤️
-
         </div>
 
     `;
-
 }
 
 
@@ -1063,25 +1012,22 @@ function afficherCompteur() {
     afficherPage("pageCompteur");
 
     mettreAJourCompteur();
-
 }
 
 
 /* =====================================================
-   MOTS
+   MENU DES MOTS
 ===================================================== */
 
 function afficherMenuMots() {
 
     afficherPage("pageMenuMots");
-
 }
 
 
 function afficherMonMot() {
 
     afficherPage("pageMonMot");
-
 }
 
 
@@ -1090,33 +1036,31 @@ function afficherTonMot() {
     afficherPage("pageTonMot");
 
     chargerMots();
-
 }
 
 
 /* =====================================================
-   CARACTÈRES DU MOT
+   COMPTEUR DE CARACTÈRES
 ===================================================== */
 
-const nouveauMot =
-    document.getElementById("nouveauMot");
+document.addEventListener("DOMContentLoaded", () => {
 
+    const input =
+        document.getElementById("nouveauMot");
 
-if (nouveauMot) {
+    const compteur =
+        document.getElementById("caracteres");
 
-    nouveauMot.addEventListener(
-        "input",
-        function () {
+    if (input && compteur) {
 
-            document.getElementById(
-                "caracteres"
-            ).textContent =
-                this.value.length;
+        input.addEventListener("input", () => {
 
-        }
-    );
+            compteur.textContent =
+                input.value.length;
 
-}
+        });
+    }
+});
 
 
 /* =====================================================
@@ -1128,14 +1072,13 @@ async function envoyerMot() {
     const input =
         document.getElementById("nouveauMot");
 
-
-    const message =
-        input.value.trim();
-
-
     const status =
         document.getElementById("messageMot");
 
+    if (!input || !status) return;
+
+    const message =
+        input.value.trim();
 
     if (!message) {
 
@@ -1146,13 +1089,10 @@ async function envoyerMot() {
             "status-message erreur";
 
         return;
-
     }
-
 
     status.textContent =
         "Envoi en cours...";
-
 
     status.className =
         "status-message";
@@ -1163,33 +1103,28 @@ async function envoyerMot() {
         await supabaseFetch(
             "mots",
             {
-
                 method: "POST",
 
                 body: {
-
                     message: message,
-
-                    date:
-                        new Date()
-                            .toISOString()
-
+                    date: new Date().toISOString()
                 }
-
             }
         );
 
 
         input.value = "";
 
-        document.getElementById(
-            "caracteres"
-        ).textContent = "0";
+        const compteur =
+            document.getElementById("caracteres");
+
+        if (compteur) {
+            compteur.textContent = "0";
+        }
 
 
         status.textContent =
             "Ton mot est bien enregistré ❤️";
-
 
         status.className =
             "status-message succes";
@@ -1205,16 +1140,12 @@ async function envoyerMot() {
             error
         );
 
-
         status.textContent =
             "Impossible d'envoyer ton mot 😢";
 
-
         status.className =
             "status-message erreur";
-
     }
-
 }
 
 
@@ -1227,6 +1158,11 @@ async function chargerMots() {
     const liste =
         document.getElementById("listeMots");
 
+    if (!liste) return;
+
+    liste.innerHTML =
+        "Chargement...";
+
 
     try {
 
@@ -1234,10 +1170,8 @@ async function chargerMots() {
             await supabaseFetch(
                 "mots",
                 {
-
                     query:
                         "?select=*&order=date.desc"
-
                 }
             );
 
@@ -1251,7 +1185,6 @@ async function chargerMots() {
             `;
 
             return;
-
         }
 
 
@@ -1261,19 +1194,13 @@ async function chargerMots() {
                 <div class="mot-card">
 
                     <div class="mot-date">
-
-                        ${formaterDate(
-                            mot.date
-                        )}
-
+                        ${formaterDate(mot.date)}
                     </div>
 
                     <div class="mot-texte">
-
                         ${echapperHTML(
                             mot.message || ""
                         )}
-
                     </div>
 
                     <div class="mot-coeur">
@@ -1292,15 +1219,22 @@ async function chargerMots() {
             error
         );
 
-
         liste.innerHTML = `
             <div class="vide erreur">
                 Impossible de charger les mots 😢
             </div>
         `;
-
     }
+}
 
+
+/* =====================================================
+   SOUVENIRS
+===================================================== */
+
+function afficherSouvenirs() {
+
+    afficherPage("pageSouvenirs");
 }
 
 
@@ -1311,21 +1245,18 @@ async function chargerMots() {
 let humeurDuJour = {
 
     reveil: null,
-
     travail: null,
-
     apres_travail: null,
-
     journee: null
 
 };
 
 
+/* =====================================================
+   CHOISIR UNE HUMEUR
+===================================================== */
 
-async function choisirHumeur(
-    moment,
-    humeur
-) {
+async function choisirHumeur(moment, humeur) {
 
     humeurDuJour[moment] =
         humeur;
@@ -1343,23 +1274,7 @@ async function choisirHumeur(
             ${humeur}
             <span>Choisi ❤️</span>
         `;
-
     }
-
-
-    const boutons =
-        document.querySelectorAll(
-            `.humeur`
-        );
-
-
-    boutons.forEach(button => {
-
-        button.classList.remove(
-            "selectionnee"
-        );
-
-    });
 
 
     try {
@@ -1379,19 +1294,16 @@ async function choisirHumeur(
             error
         );
 
-
         afficherMessageHumeur(
             "Impossible d'enregistrer 😢",
             true
         );
-
     }
-
 }
 
 
 /* =====================================================
-   ENREGISTRER HUMEUR
+   ENREGISTRER LES HUMEUR
 ===================================================== */
 
 async function enregistrerHumeurs() {
@@ -1403,7 +1315,6 @@ async function enregistrerHumeurs() {
     await supabaseFetch(
         "humeurs",
         {
-
             method: "POST",
 
             query:
@@ -1426,10 +1337,34 @@ async function enregistrerHumeurs() {
                     humeurDuJour.journee
 
             }
-
         }
     );
+}
 
+
+/* =====================================================
+   MESSAGE HUMEUR
+===================================================== */
+
+function afficherMessageHumeur(
+    message,
+    erreur = false
+) {
+
+    const element =
+        document.getElementById(
+            "messageHumeur"
+        );
+
+    if (!element) return;
+
+    element.textContent =
+        message;
+
+    element.className =
+        erreur
+            ? "status-message erreur"
+            : "status-message succes";
 }
 
 
@@ -1449,10 +1384,8 @@ async function chargerHumeurDuJour() {
             await supabaseFetch(
                 "humeurs",
                 {
-
                     query:
                         `?date=eq.${date}&select=*`
-
                 }
             );
 
@@ -1479,7 +1412,6 @@ async function chargerHumeurDuJour() {
 
                 journee:
                     humeur.journee
-
             };
 
 
@@ -1502,7 +1434,6 @@ async function chargerHumeurDuJour() {
                 "journee",
                 humeur.journee
             );
-
         }
 
 
@@ -1513,13 +1444,16 @@ async function chargerHumeurDuJour() {
             error
         );
 
+        afficherMessageHumeur(
+            "Impossible de charger les humeurs 😢",
+            true
+        );
     }
-
 }
 
 
 /* =====================================================
-   AFFICHER HUMEUR CHOISIE
+   AFFICHER HUMEUR
 ===================================================== */
 
 function afficherHumeurChoisie(
@@ -1542,9 +1476,7 @@ function afficherHumeurChoisie(
             ${humeur}
             <span>Choisi ❤️</span>
         `;
-
     }
-
 }
 
 
@@ -1557,7 +1489,6 @@ function afficherHumeur() {
     afficherPage("pageHumeur");
 
     chargerHumeurDuJour();
-
 }
 
 
@@ -1575,6 +1506,8 @@ async function afficherHistorique() {
             "historique"
         );
 
+    if (!historique) return;
+
 
     historique.innerHTML =
         "Chargement...";
@@ -1586,10 +1519,8 @@ async function afficherHistorique() {
             await supabaseFetch(
                 "humeurs",
                 {
-
                     query:
                         "?select=*&order=date.desc"
-
                 }
             );
 
@@ -1603,7 +1534,6 @@ async function afficherHistorique() {
             `;
 
             return;
-
         }
 
 
@@ -1613,55 +1543,35 @@ async function afficherHistorique() {
                 <div class="historique-card">
 
                     <div class="historique-date">
-
-                        ${formaterDate(
-                            jour.date
-                        )}
-
+                        ${formaterDate(jour.date)}
                     </div>
 
-
                     <div class="historique-ligne">
-
                         <span>🌅 Réveil</span>
-
                         <strong>
                             ${jour.reveil || "—"}
                         </strong>
-
                     </div>
 
-
                     <div class="historique-ligne">
-
                         <span>💼 Travail</span>
-
                         <strong>
                             ${jour.travail || "—"}
                         </strong>
-
                     </div>
 
-
                     <div class="historique-ligne">
-
                         <span>🏠 Après travail</span>
-
                         <strong>
                             ${jour.apres_travail || "—"}
                         </strong>
-
                     </div>
 
-
                     <div class="historique-ligne">
-
                         <span>🌙 Journée</span>
-
                         <strong>
                             ${jour.journee || "—"}
                         </strong>
-
                     </div>
 
                 </div>
@@ -1676,15 +1586,12 @@ async function afficherHistorique() {
             error
         );
 
-
         historique.innerHTML = `
             <div class="vide erreur">
                 Impossible de charger l'historique 😢
             </div>
         `;
-
     }
-
 }
 
 
@@ -1697,25 +1604,20 @@ function obtenirDateLocale() {
     const maintenant =
         new Date();
 
-
     const annee =
         maintenant.getFullYear();
-
 
     const mois =
         String(
             maintenant.getMonth() + 1
         ).padStart(2, "0");
 
-
     const jour =
         String(
             maintenant.getDate()
         ).padStart(2, "0");
 
-
     return `${annee}-${mois}-${jour}`;
-
 }
 
 
@@ -1723,34 +1625,30 @@ function formaterDate(date) {
 
     if (!date) return "";
 
-
     const parties =
         date.split("-");
 
-
-    if (parties.length !== 3)
+    if (parties.length !== 3) {
         return date;
-
+    }
 
     return `${parties[2]}/${parties[1]}/${parties[0]}`;
-
 }
 
 
 function echapperHTML(texte) {
 
-    return texte
+    return String(texte)
         .replace(/&/g, "&amp;")
         .replace(/</g, "&lt;")
         .replace(/>/g, "&gt;")
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
-
 }
 
 
 /* =====================================================
-   COMPTEUR AUTOMATIQUE
+   LANCEMENT
 ===================================================== */
 
 setInterval(
@@ -1758,12 +1656,16 @@ setInterval(
     1000
 );
 
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
 
-mettreAJourCompteur();
+        mettreAJourCompteur();
 
+    }
+);
 
 </script>
-
 
 </body>
 
