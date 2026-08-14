@@ -1,25 +1,25 @@
 /* =====================================================
-   RESET
+   BASE
 ===================================================== */
 
 * {
     box-sizing: border-box;
 }
 
-
-/* =====================================================
-   BODY / FOND ROSE
-===================================================== */
-
+html,
 body {
     margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
     min-height: 100vh;
 
     display: flex;
     justify-content: center;
     align-items: center;
-
-    position: relative;
 
     background:
         radial-gradient(
@@ -42,147 +42,12 @@ body {
         );
 
     color: #4a1c30;
-
     font-family: Arial, sans-serif;
-
     text-align: center;
 
-    padding: 25px;
+    padding: 20px;
 
     overflow-x: hidden;
-}
-
-
-/* =====================================================
-   PETITS CHATS SUR LE FOND
-===================================================== */
-
-.chats-decoration {
-    position: fixed;
-
-    inset: 0;
-
-    width: 100%;
-    height: 100%;
-
-    pointer-events: none;
-
-    overflow: hidden;
-
-    z-index: 1;
-}
-
-.chat {
-    position: absolute;
-
-    font-size: 38px;
-
-    user-select: none;
-
-    filter:
-        drop-shadow(
-            0 5px 8px
-            rgba(90, 20, 50, 0.18)
-        );
-
-    animation:
-        chatFlotte 4s ease-in-out infinite;
-}
-
-
-/* =====================================================
-   POSITION DES CHATS
-===================================================== */
-
-.chat1 {
-    top: 4%;
-    left: 25%;
-}
-
-.chat2 {
-    top: 8%;
-    right: 23%;
-    animation-delay: 0.6s;
-}
-
-.chat3 {
-    top: 25%;
-    left: 3%;
-    animation-delay: 1.2s;
-}
-
-.chat4 {
-    top: 27%;
-    right: 3%;
-    animation-delay: 1.8s;
-}
-
-.chat5 {
-    top: 47%;
-    left: 2%;
-    animation-delay: 0.8s;
-}
-
-.chat6 {
-    top: 48%;
-    right: 2%;
-    animation-delay: 2.2s;
-}
-
-.chat7 {
-    bottom: 22%;
-    left: 20%;
-    animation-delay: 1.5s;
-}
-
-.chat8 {
-    bottom: 20%;
-    right: 20%;
-    animation-delay: 2.8s;
-}
-
-.chat9 {
-    bottom: 5%;
-    left: 38%;
-
-    font-size: 32px;
-
-    animation-delay: 1s;
-}
-
-.chat10 {
-    bottom: 6%;
-    right: 38%;
-
-    font-size: 32px;
-
-    animation-delay: 2s;
-}
-
-
-/* =====================================================
-   ANIMATION DES CHATS
-===================================================== */
-
-@keyframes chatFlotte {
-
-    0% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
-
-    50% {
-        transform:
-            translateY(-12px)
-            rotate(5deg);
-    }
-
-    100% {
-        transform:
-            translateY(0)
-            rotate(-5deg);
-    }
 }
 
 
@@ -194,30 +59,42 @@ body {
     width: 100%;
     max-width: 500px;
 
+    margin-left: auto;
+    margin-right: auto;
+
     padding: 35px 25px;
 
-    position: relative;
+    background: rgba(255, 255, 255, 0.30);
 
-    z-index: 5;
-
-    background:
-        rgba(255, 255, 255, 0.38);
-
-    backdrop-filter:
-        blur(15px);
-
-    -webkit-backdrop-filter:
-        blur(15px);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 
     border-radius: 30px;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.70);
+    border: 1px solid rgba(255, 255, 255, 0.65);
 
     box-shadow:
-        0 20px 50px
-        rgba(100, 20, 50, 0.20);
+        0 20px 50px rgba(100, 20, 50, 0.18);
+
+    text-align: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   PAGES
+===================================================== */
+
+.page {
+    width: 100%;
+    max-width: 500px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    text-align: center;
 }
 
 
@@ -233,11 +110,17 @@ h1 {
     color: #4a1c30;
 
     font-weight: 700;
+
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
 }
 
 
 /* =====================================================
-   PARAGRAPHES
+   TEXTE
 ===================================================== */
 
 p {
@@ -245,9 +128,9 @@ p {
 
     font-size: 18px;
 
-    line-height: 1.5;
-
     color: #6b354b;
+
+    text-align: center;
 }
 
 
@@ -255,11 +138,10 @@ p {
    PHOTO PRINCIPALE
 ===================================================== */
 
-.container img {
+.photo-principale {
     display: block;
 
     width: 280px;
-
     max-width: 90%;
 
     height: auto;
@@ -268,15 +150,10 @@ p {
 
     border-radius: 20px;
 
-    border:
-        4px solid
-        rgba(255, 255, 255, 0.75);
+    border: 4px solid rgba(255, 255, 255, 0.75);
 
     box-shadow:
-        0 12px 30px
-        rgba(90, 20, 50, 0.25);
-
-    object-fit: cover;
+        0 12px 30px rgba(90, 20, 50, 0.25);
 }
 
 
@@ -285,13 +162,14 @@ p {
 ===================================================== */
 
 .menu {
-    display: flex;
+    width: 100%;
 
+    display: flex;
     flex-direction: column;
 
-    gap: 15px;
+    align-items: center;
 
-    width: 100%;
+    gap: 15px;
 }
 
 
@@ -301,7 +179,6 @@ p {
 
 .card {
     width: 100%;
-
     min-height: 80px;
 
     padding: 16px 20px;
@@ -309,28 +186,24 @@ p {
     display: grid;
 
     grid-template-columns: 55px 1fr;
-
-    grid-template-rows:
-        auto auto;
+    grid-template-rows: auto auto;
 
     column-gap: 12px;
 
+    align-items: center;
+
     text-align: left;
 
-    background:
-        rgba(255, 255, 255, 0.70);
+    background: rgba(255, 255, 255, 0.68);
 
     color: #4a1c30;
 
-    border:
-        1px solid
-        rgba(255, 255, 255, 0.90);
+    border: 1px solid rgba(255, 255, 255, 0.85);
 
     border-radius: 22px;
 
     box-shadow:
-        0 8px 20px
-        rgba(100, 20, 50, 0.12);
+        0 8px 20px rgba(100, 20, 50, 0.12);
 
     cursor: pointer;
 
@@ -342,7 +215,7 @@ p {
 
 
 /* =====================================================
-   ICÔNES
+   ICÔNES DES CARTES
 ===================================================== */
 
 .card span {
@@ -351,15 +224,16 @@ p {
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 
     font-size: 32px;
+
+    text-align: center;
 }
 
 
 /* =====================================================
-   TITRE DES CARTES
+   TITRE CARTES
 ===================================================== */
 
 .card strong {
@@ -368,11 +242,13 @@ p {
     font-size: 18px;
 
     color: #4a1c30;
+
+    text-align: left;
 }
 
 
 /* =====================================================
-   SOUS-TITRE DES CARTES
+   SOUS-TITRE CARTES
 ===================================================== */
 
 .card small {
@@ -381,29 +257,27 @@ p {
     font-size: 14px;
 
     color: #8c5268;
+
+    text-align: left;
 }
 
 
 /* =====================================================
-   ANIMATION HOVER
+   HOVER
 ===================================================== */
 
 .card:hover {
-    transform:
-        translateY(-4px)
-        scale(1.02);
+    transform: translateY(-4px) scale(1.02);
 
-    background:
-        rgba(255, 255, 255, 0.90);
+    background: rgba(255, 255, 255, 0.88);
 
     box-shadow:
-        0 14px 30px
-        rgba(100, 20, 50, 0.18);
+        0 14px 30px rgba(100, 20, 50, 0.18);
 }
 
 
 /* =====================================================
-   ANIMATION CLIC
+   CLIC
 ===================================================== */
 
 .card:active {
@@ -412,30 +286,54 @@ p {
 
 
 /* =====================================================
+   ICÔNE DE PAGE
+===================================================== */
+
+.page-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
    COMPTEUR
 ===================================================== */
 
 #temps {
-    margin: 25px 0;
+    text-align: center;
 
-    padding: 25px 15px;
+    margin: 30px auto;
+}
 
-    background:
-        rgba(255, 255, 255, 0.50);
+.compteur-grand {
+    font-size: 55px;
 
-    border-radius: 20px;
+    font-weight: bold;
+
+    color: #8e3658;
+
+    text-align: center;
+}
+
+.compteur-grand span {
+    display: block;
 
     font-size: 18px;
 
-    line-height: 1.8;
-
-    color: #6b354b;
+    font-weight: normal;
 }
 
-#temps strong {
-    font-size: 30px;
+.compteur-petit {
+    margin-top: 15px;
 
-    color: #4a1c30;
+    font-size: 17px;
+
+    color: #6b354b;
+
+    text-align: center;
 }
 
 
@@ -444,34 +342,304 @@ p {
 ===================================================== */
 
 .message-box {
-    padding: 22px;
+    width: 100%;
 
-    background:
-        rgba(255, 255, 255, 0.50);
+    padding: 25px;
+
+    margin: 20px auto;
+
+    background: rgba(255, 255, 255, 0.65);
 
     border-radius: 22px;
 
-    box-shadow:
-        0 8px 20px
-        rgba(100, 20, 50, 0.10);
+    border: 1px solid rgba(255, 255, 255, 0.8);
 
-    margin-bottom: 25px;
+    box-shadow:
+        0 10px 25px rgba(100, 20, 50, 0.12);
+
+    text-align: center;
 }
 
 .message-box p {
     margin: 0;
 
-    font-size: 17px;
+    line-height: 1.6;
 
-    line-height: 1.7;
+    text-align: center;
+}
 
+
+/* =====================================================
+   TEXTAREA
+===================================================== */
+
+.mot-input {
+    width: 100%;
+
+    min-height: 150px;
+
+    padding: 18px;
+
+    resize: vertical;
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    background: rgba(255, 255, 255, 0.75);
+
+    color: #4a1c30;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+
+    outline: none;
+
+    text-align: left;
+}
+
+.mot-input:focus {
+    box-shadow:
+        0 0 0 3px rgba(255, 130, 170, 0.25);
+}
+
+
+/* =====================================================
+   BOUTON PRINCIPAL
+===================================================== */
+
+.main-button {
+    width: 100%;
+
+    padding: 15px;
+
+    margin-top: 15px;
+
+    border: none;
+
+    border-radius: 18px;
+
+    background: #d96b96;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.main-button:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   HUMEUR
+===================================================== */
+
+.humeur-section {
+    width: 100%;
+
+    margin-bottom: 30px;
+
+    text-align: center;
+}
+
+.humeur-section h2 {
+    margin-bottom: 15px;
+
+    color: #6b354b;
+
+    font-size: 20px;
+}
+
+
+/* =====================================================
+   GRILLE HUMEUR
+===================================================== */
+
+.humeur-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 8px;
+
+    justify-items: center;
+}
+
+
+/* =====================================================
+   BOUTON HUMEUR
+===================================================== */
+
+.humeur {
+    width: 100%;
+
+    min-height: 75px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    font-size: 28px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+.humeur:hover {
+    transform: translateY(-3px);
+
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.humeur small {
+    font-size: 10px;
+
+    color: #8c5268;
+}
+
+
+/* =====================================================
+   HUMEUR CHOISIE
+===================================================== */
+
+.humeur-selection {
+    min-height: 30px;
+
+    margin-top: 10px;
+
+    font-size: 22px;
+
+    text-align: center;
+}
+
+.humeur-selection span {
+    margin-left: 6px;
+
+    font-size: 13px;
+
+    color: #8c5268;
+}
+
+
+/* =====================================================
+   MOTS
+===================================================== */
+
+.anciens-mots {
+    margin-top: 30px;
+
+    text-align: center;
+}
+
+.anciens-mots h2 {
     color: #6b354b;
 }
 
-.message-box strong {
+
+.mot-card {
+    width: 100%;
+
+    margin: 15px auto;
+
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    text-align: center;
+}
+
+.mot-date {
+    font-size: 12px;
+
+    color: #9b6077;
+
+    margin-bottom: 10px;
+}
+
+.mot-texte {
+    font-size: 16px;
+
+    line-height: 1.5;
+
     color: #4a1c30;
 
-    font-size: 19px;
+    word-wrap: break-word;
+}
+
+.mot-coeur {
+    margin-top: 10px;
+}
+
+
+/* =====================================================
+   HISTORIQUE
+===================================================== */
+
+.historique-card {
+    width: 100%;
+
+    margin: 15px auto;
+
+    padding: 20px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    text-align: center;
+}
+
+.historique-date {
+    font-weight: bold;
+
+    color: #8e3658;
+
+    margin-bottom: 15px;
+}
+
+.historique-ligne {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 8px 0;
+
+    border-bottom: 1px solid rgba(120, 50, 80, 0.1);
+}
+
+.historique-ligne:last-child {
+    border-bottom: none;
 }
 
 
@@ -483,16 +651,39 @@ p {
     display: block;
 
     width: 100%;
+    max-width: 420px;
 
-    max-width: 450px;
+    height: auto;
 
-    margin: 0 auto 20px auto;
+    margin: 20px auto;
 
     border-radius: 20px;
 
     box-shadow:
-        0 12px 30px
-        rgba(90, 20, 50, 0.25);
+        0 10px 25px rgba(100, 20, 50, 0.2);
+}
+
+
+/* =====================================================
+   MESSAGE STATUS
+===================================================== */
+
+.status-message {
+    margin: 15px auto;
+
+    min-height: 20px;
+
+    text-align: center;
+
+    font-size: 14px;
+}
+
+.status-message.succes {
+    color: #5b8c62;
+}
+
+.status-message.erreur {
+    color: #b34c61;
 }
 
 
@@ -501,97 +692,214 @@ p {
 ===================================================== */
 
 .retour {
-    position: fixed;
+    display: flex;
 
-    bottom: 15px;
+    justify-content: center;
+    align-items: center;
 
-    left: 15px;
+    grid-template-columns: 1fr;
+
+    margin: 25px auto 0;
 
     width: auto;
 
-    min-width: 75px;
+    min-width: 110px;
 
-    padding: 7px 12px;
+    min-height: auto;
 
-    font-size: 12px;
+    padding: 10px 18px;
 
-    border-radius: 12px;
-
-    z-index: 1000;
+    text-align: center;
 }
 
 
 /* =====================================================
-   MOBILE
+   CHATS
+===================================================== */
+
+.chats-decoration {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.chat {
+    position: absolute;
+
+    font-size: 35px;
+
+    opacity: 0.85;
+
+    animation: chatFloat 4s ease-in-out infinite;
+}
+
+.chat1 {
+    top: 8%;
+    left: 8%;
+}
+
+.chat2 {
+    top: 18%;
+    right: 8%;
+}
+
+.chat3 {
+    top: 38%;
+    left: 4%;
+}
+
+.chat4 {
+    top: 48%;
+    right: 5%;
+}
+
+.chat5 {
+    bottom: 15%;
+    left: 8%;
+}
+
+.chat6 {
+    bottom: 8%;
+    right: 10%;
+}
+
+.chat7 {
+    top: 65%;
+    left: 15%;
+}
+
+.chat8 {
+    top: 28%;
+    right: 18%;
+}
+
+.chat9 {
+    bottom: 30%;
+    right: 20%;
+}
+
+.chat10 {
+    top: 10%;
+    left: 40%;
+}
+
+@keyframes chatFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+
+/* =====================================================
+   CŒURS
+===================================================== */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+.floating-hearts span {
+    position: absolute;
+
+    font-size: 25px;
+
+    opacity: 0.35;
+}
+
+.floating-hearts span:nth-child(1) {
+    top: 10%;
+    left: 25%;
+}
+
+.floating-hearts span:nth-child(2) {
+    top: 30%;
+    right: 25%;
+}
+
+.floating-hearts span:nth-child(3) {
+    bottom: 25%;
+    left: 20%;
+}
+
+.floating-hearts span:nth-child(4) {
+    bottom: 10%;
+    right: 30%;
+}
+
+.floating-hearts span:nth-child(5) {
+    top: 50%;
+    left: 8%;
+}
+
+
+/* =====================================================
+   MOBILE / IPHONE
 ===================================================== */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 15px;
+        padding: 12px;
+
+        align-items: flex-start;
     }
-
-
-    /* =========================
-       CONTENEUR
-    ========================= */
 
     .container {
         width: 100%;
 
         max-width: 500px;
 
+        margin: 15px auto;
+
         padding: 28px 18px;
 
         border-radius: 25px;
     }
 
-
-    /* =========================
-       TITRE
-    ========================= */
-
     h1 {
         font-size: 30px;
+
+        text-align: center;
     }
-
-
-    /* =========================
-       TEXTE
-    ========================= */
 
     p {
         font-size: 16px;
 
+        text-align: center;
+
         margin-bottom: 25px;
     }
 
-
-    /* =========================
-       PHOTO
-    ========================= */
-
-    .container img {
-        display: block;
-
+    .photo-principale {
         width: 240px;
 
-        max-width: 90%;
+        max-width: 85%;
 
-        height: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
 
-        margin:
-            0 auto 25px auto;
-
-        object-fit: cover;
+        margin-bottom: 25px;
     }
 
-
-    /* =========================
-       CARTES
-    ========================= */
-
     .card {
+        width: 100%;
+
         min-height: 75px;
 
         padding: 14px 16px;
@@ -609,92 +917,31 @@ p {
         font-size: 13px;
     }
 
+    .humeur-grid {
+        grid-template-columns: repeat(3, 1fr);
 
-    /* =========================
-       MESSAGE
-    ========================= */
+        gap: 8px;
+    }
+
+    .humeur {
+        min-height: 70px;
+
+        font-size: 26px;
+    }
+
+    .humeur small {
+        font-size: 9px;
+    }
+
+    .compteur-grand {
+        font-size: 45px;
+    }
 
     .message-box {
-        padding: 18px;
+        padding: 20px 16px;
     }
-
-    .message-box p {
-        font-size: 16px;
-
-        line-height: 1.6;
-    }
-
-
-    /* =========================
-       CHATS
-    ========================= */
 
     .chat {
-        font-size: 27px;
-    }
-
-    .chat1 {
-        top: 3%;
-        left: 18%;
-    }
-
-    .chat2 {
-        top: 5%;
-        right: 18%;
-    }
-
-    .chat3 {
-        top: 23%;
-        left: 1%;
-    }
-
-    .chat4 {
-        top: 25%;
-        right: 1%;
-    }
-
-    .chat5 {
-        top: 47%;
-        left: 0;
-    }
-
-    .chat6 {
-        top: 48%;
-        right: 0;
-    }
-
-    .chat7 {
-        bottom: 19%;
-        left: 12%;
-    }
-
-    .chat8 {
-        bottom: 18%;
-        right: 12%;
-    }
-
-    .chat9 {
-        bottom: 4%;
-        left: 30%;
-
-        font-size: 25px;
-    }
-
-    .chat10 {
-        bottom: 4%;
-        right: 30%;
-
-        font-size: 25px;
-    }
-
-
-    /* =========================
-       VIDÉO
-    ========================= */
-
-    .souvenir-video {
-        width: 100%;
-
-        border-radius: 18px;
+        font-size: 28px;
     }
 }
