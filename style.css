@@ -1,36 +1,27 @@
 /* =====================================================
-   BASE
+   RESET
 ===================================================== */
 
 * {
     box-sizing: border-box;
 }
-html,
-body {
-    width: 100%;
-    min-width: 100%;
-    margin: 0;
-    padding: 0;
-}
 
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-html,
-body {
-    margin: 0;
-    padding: 0;
+html {
     width: 100%;
     min-height: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    width: 100%;
     min-height: 100vh;
 
+    margin: 0;
+    padding: 20px;
+
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 
     background:
@@ -54,25 +45,27 @@ body {
         );
 
     color: #4a1c30;
-    font-family: Arial, sans-serif;
-    text-align: center;
 
-    padding: 20px;
+    font-family: Arial, sans-serif;
+
+    text-align: center;
 
     overflow-x: hidden;
 }
 
 
 /* =====================================================
-   CONTENEUR PRINCIPAL
+   CONTENEUR
 ===================================================== */
 
 .container {
-    width: calc(100% - 30px);
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
     max-width: 500px;
 
-    margin-left: auto;
-    margin-right: auto;
+    margin: 15px auto;
 
     padding: 35px 25px;
 
@@ -88,25 +81,6 @@ body {
     box-shadow:
         0 20px 50px rgba(100, 20, 50, 0.18);
 
-    position: relative;
-    left: auto;
-    right: auto;
-
-    text-align: center;
-}
-
-
-/* =====================================================
-   PAGES
-===================================================== */
-
-.page {
-    width: 100%;
-    max-width: 500px;
-
-    margin-left: auto;
-    margin-right: auto;
-
     text-align: center;
 }
 
@@ -116,7 +90,7 @@ body {
 ===================================================== */
 
 h1 {
-    margin: 0 0 12px 0;
+    margin: 0 0 12px;
 
     font-size: 38px;
 
@@ -129,19 +103,36 @@ h1 {
 
 h2 {
     text-align: center;
+
+    color: #6b354b;
 }
 
 
 /* =====================================================
-   TEXTE
+   PARAGRAPHES
 ===================================================== */
 
 p {
-    margin: 0 0 30px 0;
+    margin: 0 0 30px;
 
     font-size: 18px;
 
     color: #6b354b;
+
+    line-height: 1.5;
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   ICÔNE DE PAGE
+===================================================== */
+
+.page-icon {
+    font-size: 45px;
+
+    margin-bottom: 10px;
 
     text-align: center;
 }
@@ -160,6 +151,13 @@ p {
     height: auto;
 
     margin: 0 auto 30px auto !important;
+
+    border-radius: 20px;
+
+    border: 4px solid rgba(255, 255, 255, 0.75);
+
+    box-shadow:
+        0 12px 30px rgba(90, 20, 50, 0.25);
 }
 
 
@@ -171,6 +169,7 @@ p {
     width: 100%;
 
     display: flex;
+
     flex-direction: column;
 
     align-items: center;
@@ -180,11 +179,12 @@ p {
 
 
 /* =====================================================
-   CARTES / BOUTONS
+   CARTES
 ===================================================== */
 
 .card {
     width: 100%;
+
     min-height: 80px;
 
     padding: 16px 20px;
@@ -192,6 +192,7 @@ p {
     display: grid;
 
     grid-template-columns: 55px 1fr;
+
     grid-template-rows: auto auto;
 
     column-gap: 12px;
@@ -221,7 +222,7 @@ p {
 
 
 /* =====================================================
-   ICÔNES DES CARTES
+   ICÔNE DES CARTES
 ===================================================== */
 
 .card span {
@@ -230,6 +231,7 @@ p {
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     font-size: 32px;
@@ -239,7 +241,7 @@ p {
 
 
 /* =====================================================
-   TITRE CARTES
+   TITRE CARTE
 ===================================================== */
 
 .card strong {
@@ -254,7 +256,7 @@ p {
 
 
 /* =====================================================
-   SOUS-TITRE CARTES
+   SOUS-TITRE CARTE
 ===================================================== */
 
 .card small {
@@ -292,13 +294,27 @@ p {
 
 
 /* =====================================================
-   ICÔNE DE PAGE
+   BOUTON RETOUR
 ===================================================== */
 
-.page-icon {
-    font-size: 45px;
+.retour {
+    width: auto;
 
-    margin-bottom: 10px;
+    min-width: 110px;
+
+    min-height: auto;
+
+    margin: 25px auto 0;
+
+    padding: 10px 18px;
+
+    display: flex;
+
+    grid-template-columns: 1fr;
+
+    justify-content: center;
+
+    align-items: center;
 
     text-align: center;
 }
@@ -309,9 +325,11 @@ p {
 ===================================================== */
 
 #temps {
-    text-align: center;
+    width: 100%;
 
     margin: 30px auto;
+
+    text-align: center;
 }
 
 .compteur-grand {
@@ -326,6 +344,8 @@ p {
 
 .compteur-grand span {
     display: block;
+
+    margin-top: 5px;
 
     font-size: 18px;
 
@@ -350,9 +370,9 @@ p {
 .message-box {
     width: 100%;
 
-    padding: 25px;
-
     margin: 20px auto;
+
+    padding: 25px;
 
     background: rgba(255, 255, 255, 0.65);
 
@@ -380,9 +400,13 @@ p {
 ===================================================== */
 
 .mot-input {
+    display: block;
+
     width: 100%;
 
     min-height: 150px;
+
+    margin: 0 auto;
 
     padding: 18px;
 
@@ -416,11 +440,13 @@ p {
 ===================================================== */
 
 .main-button {
+    display: block;
+
     width: 100%;
 
-    padding: 15px;
+    margin: 15px auto 0;
 
-    margin-top: 15px;
+    padding: 15px;
 
     border: none;
 
@@ -445,21 +471,100 @@ p {
 
 
 /* =====================================================
+   COMPTEUR DE CARACTÈRES
+===================================================== */
+
+.compteur-caracteres {
+    margin-top: 6px;
+
+    color: #8c5268;
+
+    font-size: 13px;
+
+    text-align: right;
+}
+
+
+/* =====================================================
+   ANCIENS MOTS
+===================================================== */
+
+.anciens-mots {
+    width: 100%;
+
+    margin: 30px auto 0;
+
+    text-align: center;
+}
+
+.anciens-mots h2 {
+    margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   CARTE MOT
+===================================================== */
+
+.mot-card {
+    width: 100%;
+
+    margin: 15px auto;
+
+    padding: 18px;
+
+    background: rgba(255, 255, 255, 0.65);
+
+    border-radius: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    text-align: center;
+}
+
+.mot-date {
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    color: #9b6077;
+
+    text-align: center;
+}
+
+.mot-texte {
+    font-size: 16px;
+
+    line-height: 1.5;
+
+    color: #4a1c30;
+
+    word-wrap: break-word;
+
+    text-align: center;
+}
+
+.mot-coeur {
+    margin-top: 10px;
+
+    text-align: center;
+}
+
+
+/* =====================================================
    HUMEUR
 ===================================================== */
 
 .humeur-section {
     width: 100%;
 
-    margin-bottom: 30px;
+    margin: 0 auto 30px;
 
     text-align: center;
 }
 
 .humeur-section h2 {
     margin-bottom: 15px;
-
-    color: #6b354b;
 
     font-size: 20px;
 }
@@ -478,6 +583,8 @@ p {
 
     gap: 8px;
 
+    margin: 0 auto;
+
     justify-items: center;
 }
 
@@ -490,6 +597,8 @@ p {
     width: 100%;
 
     min-height: 75px;
+
+    padding: 8px 4px;
 
     border: 1px solid rgba(255, 255, 255, 0.8);
 
@@ -524,17 +633,19 @@ p {
     font-size: 10px;
 
     color: #8c5268;
+
+    text-align: center;
 }
 
 
 /* =====================================================
-   HUMEUR CHOISIE
+   HUMEUR SÉLECTIONNÉE
 ===================================================== */
 
 .humeur-selection {
     min-height: 30px;
 
-    margin-top: 10px;
+    margin: 10px auto 0;
 
     font-size: 22px;
 
@@ -551,62 +662,16 @@ p {
 
 
 /* =====================================================
-   MOTS
-===================================================== */
-
-.anciens-mots {
-    margin-top: 30px;
-
-    text-align: center;
-}
-
-.anciens-mots h2 {
-    color: #6b354b;
-}
-
-
-.mot-card {
-    width: 100%;
-
-    margin: 15px auto;
-
-    padding: 18px;
-
-    background: rgba(255, 255, 255, 0.65);
-
-    border-radius: 20px;
-
-    border: 1px solid rgba(255, 255, 255, 0.8);
-
-    text-align: center;
-}
-
-.mot-date {
-    font-size: 12px;
-
-    color: #9b6077;
-
-    margin-bottom: 10px;
-}
-
-.mot-texte {
-    font-size: 16px;
-
-    line-height: 1.5;
-
-    color: #4a1c30;
-
-    word-wrap: break-word;
-}
-
-.mot-coeur {
-    margin-top: 10px;
-}
-
-
-/* =====================================================
    HISTORIQUE
 ===================================================== */
+
+#historique {
+    width: 100%;
+
+    margin: 0 auto;
+
+    text-align: center;
+}
 
 .historique-card {
     width: 100%;
@@ -625,11 +690,13 @@ p {
 }
 
 .historique-date {
+    margin-bottom: 15px;
+
     font-weight: bold;
 
     color: #8e3658;
 
-    margin-bottom: 15px;
+    text-align: center;
 }
 
 .historique-ligne {
@@ -642,6 +709,8 @@ p {
     padding: 8px 0;
 
     border-bottom: 1px solid rgba(120, 50, 80, 0.1);
+
+    text-align: left;
 }
 
 .historique-ligne:last-child {
@@ -657,6 +726,7 @@ p {
     display: block;
 
     width: 100%;
+
     max-width: 420px;
 
     height: auto;
@@ -671,17 +741,17 @@ p {
 
 
 /* =====================================================
-   MESSAGE STATUS
+   MESSAGES D'ÉTAT
 ===================================================== */
 
 .status-message {
-    margin: 15px auto;
-
     min-height: 20px;
 
-    text-align: center;
+    margin: 15px auto;
 
     font-size: 14px;
+
+    text-align: center;
 }
 
 .status-message.succes {
@@ -694,28 +764,70 @@ p {
 
 
 /* =====================================================
-   RETOUR
+   MESSAGE VIDE
 ===================================================== */
 
-.retour {
-    display: flex;
+.vide {
+    padding: 20px;
 
-    justify-content: center;
-    align-items: center;
-
-    grid-template-columns: 1fr;
-
-    margin: 25px auto 0;
-
-    width: auto;
-
-    min-width: 110px;
-
-    min-height: auto;
-
-    padding: 10px 18px;
+    color: #8c5268;
 
     text-align: center;
+}
+
+
+/* =====================================================
+   PETITS CŒURS
+===================================================== */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    overflow: hidden;
+}
+
+.floating-hearts span {
+    position: absolute;
+
+    font-size: 20px;
+
+    opacity: 0.25;
+
+    pointer-events: none;
+}
+
+.floating-hearts span:nth-child(1) {
+    top: 8%;
+    left: 3%;
+}
+
+.floating-hearts span:nth-child(2) {
+    top: 25%;
+    right: 3%;
+}
+
+.floating-hearts span:nth-child(3) {
+    bottom: 25%;
+    left: 3%;
+}
+
+.floating-hearts span:nth-child(4) {
+    bottom: 8%;
+    right: 3%;
+}
+
+.floating-hearts span:nth-child(5) {
+    top: 50%;
+    left: 2%;
 }
 
 
@@ -728,34 +840,39 @@ p {
 
     inset: 0;
 
+    width: 100%;
+    height: 100%;
+
     pointer-events: none;
 
     z-index: 0;
+
+    overflow: hidden;
 }
 
 .chat {
     position: absolute;
 
-    font-size: 35px;
+    font-size: 32px;
 
-    opacity: 0.85;
+    opacity: 0.8;
 
     animation: chatFloat 4s ease-in-out infinite;
 }
 
 .chat1 {
     top: 8%;
-    left: 8%;
+    left: 7%;
 }
 
 .chat2 {
     top: 18%;
-    right: 8%;
+    right: 7%;
 }
 
 .chat3 {
     top: 38%;
-    left: 4%;
+    left: 5%;
 }
 
 .chat4 {
@@ -765,32 +882,32 @@ p {
 
 .chat5 {
     bottom: 15%;
-    left: 8%;
+    left: 7%;
 }
 
 .chat6 {
     bottom: 8%;
-    right: 10%;
+    right: 8%;
 }
 
 .chat7 {
     top: 65%;
-    left: 15%;
+    left: 12%;
 }
 
 .chat8 {
     top: 28%;
-    right: 18%;
+    right: 15%;
 }
 
 .chat9 {
     bottom: 30%;
-    right: 20%;
+    right: 18%;
 }
 
 .chat10 {
     top: 10%;
-    left: 40%;
+    left: 45%;
 }
 
 @keyframes chatFloat {
@@ -807,63 +924,21 @@ p {
 
 
 /* =====================================================
-   CŒURS
-===================================================== */
-
-.floating-hearts {
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: 0;
-}
-
-.floating-hearts span {
-    position: absolute;
-
-    font-size: 25px;
-
-    opacity: 0.35;
-}
-
-.floating-hearts span:nth-child(1) {
-    top: 10%;
-    left: 25%;
-}
-
-.floating-hearts span:nth-child(2) {
-    top: 30%;
-    right: 25%;
-}
-
-.floating-hearts span:nth-child(3) {
-    bottom: 25%;
-    left: 20%;
-}
-
-.floating-hearts span:nth-child(4) {
-    bottom: 10%;
-    right: 30%;
-}
-
-.floating-hearts span:nth-child(5) {
-    top: 50%;
-    left: 8%;
-}
-
-
-/* =====================================================
    MOBILE / IPHONE
 ===================================================== */
 
 @media (max-width: 600px) {
 
     body {
-        padding: 12px;
+        width: 100%;
 
-        align-items: flex-start;
+        padding: 10px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
     }
 
     .container {
@@ -871,7 +946,7 @@ p {
 
         max-width: 500px;
 
-        margin: 15px auto;
+        margin: 10px auto;
 
         padding: 28px 18px;
 
@@ -947,40 +1022,21 @@ p {
         padding: 20px 16px;
     }
 
-    .chat {
-        font-size: 28px;
-    }
-}
-@media (max-width: 600px) {
-
-    body {
+    .souvenir-video {
         width: 100%;
-        min-width: 100%;
 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        padding: 10px;
+        max-width: 420px;
     }
 
-    .container {
-        width: calc(100% - 10px);
-        max-width: 500px;
+    .chat {
+        font-size: 27px;
 
-        margin: 10px auto;
-
-        left: auto;
-        right: auto;
+        opacity: 0.7;
     }
 
-    .photo-principale {
-        display: block !important;
+    .floating-hearts span {
+        font-size: 17px;
 
-        width: 240px;
-        max-width: 85%;
-
-        margin-left: auto !important;
-        margin-right: auto !important;
+        opacity: 0.22;
     }
 }
