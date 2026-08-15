@@ -1322,42 +1322,29 @@ async function chargerMots() {
 ===================================================== */
 
 let humeurDuJour = {
-
     reveil: null,
-
     travail: null,
-
     apres_travail: null,
-
     journee: null
-
 };
 
 
-async function choisirHumeur(
-    moment,
-    humeur
-) {
+/* =====================================================
+   CHOISIR UNE HUMEUR
+===================================================== */
 
-    humeurDuJour[moment] =
-        humeur;
+async function choisirHumeur(moment, humeur) {
 
+    humeurDuJour[moment] = humeur;
 
-    const affichage =
-        document.getElementById(
-            `choix-${moment}`
-        );
-
+    const affichage = document.getElementById(`choix-${moment}`);
 
     if (affichage) {
-
         affichage.innerHTML = `
             ${humeur}
             <span>Choisi ❤️</span>
         `;
-
     }
-
 
     try {
 
@@ -1368,22 +1355,15 @@ async function choisirHumeur(
             false
         );
 
-
     } catch (error) {
 
-        console.error(
-            "Erreur Supabase :",
-            error
-        );
-
+        console.error("Erreur Supabase :", error);
 
         afficherMessageHumeur(
             "Impossible d'enregistrer 😢",
             true
         );
-
     }
-
 }
 
 
@@ -1393,113 +1373,80 @@ async function choisirHumeur(
 
 async function enregistrerHumeurs() {
 
-    const date =
-        obtenirDateLocale();
-
+    const date = obtenirDateLocale();
 
     await supabaseFetch(
         "humeurs",
         {
-
             method: "POST",
 
-            query:
-                "?on_conflict=date",
+            query: "?on_conflict=date",
 
             body: {
-
                 date: date,
-
-                reveil:
-                    humeurDuJour.reveil,
-
-                travail:
-                    humeurDuJour.travail,
-
-                apres_travail:
-                    humeurDuJour.apres_travail,
-
-                journee:
-                    humeurDuJour.journee
-
+                reveil: humeurDuJour.reveil,
+                travail: humeurDuJour.travail,
+                apres_travail: humeurDuJour.apres_travail,
+                journee: humeurDuJour.journee
             }
-
         }
     );
-
 }
 
 
-function afficherMessageHumeur(
-    message,
-    erreur
-) {
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+function afficherMessageHumeur(message, erreur) {
 
     const element =
-        document.getElementById(
-            "messageHumeur"
-        );
+        document.getElementById("messageHumeur");
 
     if (!element) return;
 
-    element.textContent =
-        message;
+    element.textContent = message;
 
     element.className =
         erreur
             ? "status-message erreur"
             : "status-message succes";
-
 }
 
 
 /* =====================================================
-   CHARGER HUMEUR
+   CHARGER L'HUMEUR DU JOUR
 ===================================================== */
 
 async function chargerHumeurDuJour() {
 
     try {
 
-        const date =
-            obtenirDateLocale();
-
+        const date = obtenirDateLocale();
 
         const result =
             await supabaseFetch(
                 "humeurs",
                 {
-
                     query:
                         `?date=eq.${date}&select=*`
-
                 }
             );
 
+        if (result && result.length) {
 
-        if (
-            result &&
-            result.length
-        ) {
-
-            const humeur =
-                result[0];
-
+            const humeur = result[0];
 
             humeurDuJour = {
 
-                reveil:
-                    humeur.reveil,
+                reveil: humeur.reveil,
 
-                travail:
-                    humeur.travail,
+                travail: humeur.travail,
 
                 apres_travail:
                     humeur.apres_travail,
 
-                journee:
-                    humeur.journee
-
+                journee: humeur.journee
             };
 
 
@@ -1508,26 +1455,21 @@ async function chargerHumeurDuJour() {
                 humeur.reveil
             );
 
-
             afficherHumeurChoisie(
                 "travail",
                 humeur.travail
             );
-
 
             afficherHumeurChoisie(
                 "apres_travail",
                 humeur.apres_travail
             );
 
-
             afficherHumeurChoisie(
                 "journee",
                 humeur.journee
             );
-
         }
-
 
     } catch (error) {
 
@@ -1535,29 +1477,22 @@ async function chargerHumeurDuJour() {
             "Erreur chargement humeur :",
             error
         );
-
     }
-
 }
 
 
 /* =====================================================
-   AFFICHER HUMEUR
+   AFFICHER HUMEUR CHOISIE
 ===================================================== */
 
-function afficherHumeurChoisie(
-    moment,
-    humeur
-) {
+function afficherHumeurChoisie(moment, humeur) {
 
     if (!humeur) return;
-
 
     const element =
         document.getElementById(
             `choix-${moment}`
         );
-
 
     if (element) {
 
@@ -1565,18 +1500,19 @@ function afficherHumeurChoisie(
             ${humeur}
             <span>Choisi ❤️</span>
         `;
-
     }
-
 }
 
+
+/* =====================================================
+   PAGE HUMEUR
+===================================================== */
 
 function afficherHumeur() {
 
     afficherPage("pageHumeur");
 
     chargerHumeurDuJour();
-
 }
 
 
