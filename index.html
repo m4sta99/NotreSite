@@ -4,15 +4,9 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="theme-color"
-        content="#efa9c3"
-    >
+    <meta name="theme-color" content="#efa9c3">
 
     <title>Pour toi ❤️</title>
 
@@ -29,9 +23,7 @@
 
 <div class="container" id="accueil">
 
-    <!-- CHATS -->
     <div class="chats-decoration">
-
         <div class="chat chat1">🐱</div>
         <div class="chat chat2">🐈</div>
         <div class="chat chat3">🐱</div>
@@ -42,24 +34,13 @@
         <div class="chat chat8">🐈</div>
         <div class="chat chat9">🐱</div>
         <div class="chat chat10">🐈</div>
-
     </div>
 
+    <div class="heart-title">❤️</div>
 
-    <div class="heart-title">
-        ❤️
-    </div>
+    <h1>Pour toi</h1>
 
-
-    <h1>
-        Pour toi
-    </h1>
-
-
-    <p>
-        Une petite surprise rien que pour toi...
-    </p>
-
+    <p>Une petite surprise rien que pour toi...</p>
 
     <img
         src="./images/10CC911E-4C73-412E-8684-AE2CB371A263.jpeg"
@@ -67,316 +48,167 @@
         class="photo-principale"
     >
 
-
     <div class="menu">
 
-
-        <!-- COMPTEUR -->
-
-        <button
-            class="card"
-            onclick="afficherCompteur()"
-        >
-
+        <button class="card" onclick="afficherCompteur()">
             <span>⏱️</span>
-
-            <strong>
-                Compteur
-            </strong>
-
-            <small>
-                Notre temps ensemble
-            </small>
-
+            <strong>Compteur</strong>
+            <small>Notre temps ensemble</small>
         </button>
 
-
-        <!-- MOTS -->
-
-        <button
-            class="card"
-            onclick="afficherMenuMots()"
-        >
-
+        <button class="card" onclick="afficherMenuMots()">
             <span>💌</span>
-
-            <strong>
-                Un mot
-            </strong>
-
-            <small>
-                Nos petits mots à nous
-            </small>
-
+            <strong>Un mot</strong>
+            <small>Nos petits mots à nous</small>
         </button>
 
-
-        <!-- SOUVENIRS -->
-
-        <button
-            class="card"
-            onclick="afficherSouvenirs()"
-        >
-
+        <button class="card" onclick="afficherSouvenirs()">
             <span>📸</span>
-
-            <strong>
-                Souvenirs
-            </strong>
-
-            <small>
-                Nos plus beaux moments
-            </small>
-
+            <strong>Souvenirs</strong>
+            <small>Nos plus beaux moments</small>
         </button>
 
-
-        <!-- HUMEUR -->
-
-        <button
-            class="card"
-            onclick="afficherHumeur()"
-        >
-
+        <button class="card" onclick="afficherHumeur()">
             <span>🌸</span>
-
-            <strong>
-                Mon humeur
-            </strong>
-
-            <small>
-                Comment s'est passée ma journée ?
-            </small>
-
+            <strong>Mon humeur</strong>
+            <small>Comment s'est passée ma journée ?</small>
         </button>
 
-
-        <!-- HISTORIQUE -->
-
-        <button
-            class="card"
-            onclick="afficherHistorique()"
-        >
-
+        <button class="card" onclick="afficherHistorique()">
             <span>📊</span>
-
-            <strong>
-                Historique
-            </strong>
-
-            <small>
-                Voir tes journées
-            </small>
-
+            <strong>Historique</strong>
+            <small>Voir tes journées</small>
         </button>
 
-
-        <!-- JEU -->
-
-        <button
-            class="card"
-            onclick="afficherJeu()"
-        >
-
+        <button class="card" onclick="afficherJeu()">
             <span>🎮</span>
-
-            <strong>
-                Est-ce que tu me connais ?
-            </strong>
-
-            <small>
-                3 questions par jour ❤️
-            </small>
-
+            <strong>Est-ce que tu me connais ?</strong>
+            <small>3 questions par jour ❤️</small>
         </button>
 
     </div>
 
 </div>
-
 
 
 <!-- =====================================================
      COMPTEUR
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageCompteur"
-    style="display:none;"
->
+<div class="container page" id="pageCompteur">
 
-    <div class="page-icon">
-        ❤️
-    </div>
+    <div class="page-icon">❤️</div>
 
+    <h1>Nous deux</h1>
 
-    <h1>
-        Nous deux
-    </h1>
+    <p>Ensemble depuis le 23 juin 2026</p>
 
+    <div id="temps"></div>
 
-    <p>
-        Ensemble depuis le 23 juin 2026
-    </p>
-
-
-    <div id="temps">
-        Chargement...
-    </div>
-
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="retourAccueil()">
         ← Retour
     </button>
 
 </div>
-
 
 
 <!-- =====================================================
      MENU MOTS
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageMenuMots"
-    style="display:none;"
->
+<div class="container page" id="pageMenuMots">
 
-    <div class="page-icon">
-        💌
-    </div>
+    <div class="page-icon">💌</div>
 
+    <h1>Un mot</h1>
 
-    <h1>
-        Un mot
-    </h1>
-
-
-    <p>
-        Parce qu'on a toujours quelque chose à se dire ❤️
-    </p>
-
+    <p>Parce qu'on a toujours quelque chose à se dire ❤️</p>
 
     <div class="menu">
 
-        <button
-            class="card"
-            onclick="afficherMonMot()"
-        >
-
+        <button class="card" onclick="afficherMonMot()">
             <span>💗</span>
-
-            <strong>
-                Mon mot pour toi
-            </strong>
-
-            <small>
-                Ce que j'ai envie de te dire
-            </small>
-
+            <strong>Mon mot pour toi</strong>
+            <small>Ce que j'ai envie de te dire</small>
         </button>
 
-
-        <button
-            class="card"
-            onclick="afficherTonMot()"
-        >
-
+        <button class="card" onclick="afficherTonMot()">
             <span>💌</span>
-
-            <strong>
-                Ton mot pour moi
-            </strong>
-
-            <small>
-                Laisse-moi un petit mot
-            </small>
-
+            <strong>Ton mot pour moi</strong>
+            <small>Laisse-moi un petit mot</small>
         </button>
 
     </div>
 
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="retourAccueil()">
         ← Retour
     </button>
 
 </div>
 
 
-
 <!-- =====================================================
      MON MOT
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageMonMot"
-    style="display:none;"
->
+<div class="container page" id="pageMonMot">
 
-    <div class="page-icon">
-        ❤️
-    </div>
+    <div class="page-icon">❤️</div>
 
-
-    <h1>
-        Mon mot pour toi
-    </h1>
-
+    <h1>Mon mot pour toi</h1>
 
     <div class="message-box">
-    <p>
-        Mon amour, je veux que tu saches une chose : je serai toujours là pour toi. ❤️
-        <br><br>
-        Peu importe les moments difficiles, les doutes ou les journées où ça ne va pas,
-        tu pourras toujours compter sur moi. Je serai là pour t’écouter, te soutenir,
-        te rassurer et simplement te prendre dans mes bras quand tu en auras besoin.
-        <br><br>
-        Je veux être la personne vers qui tu peux te tourner sans jamais avoir peur
-        d’être jugée ou de déranger.
-        <br><br>
-        <strong>
-            Tant que tu voudras de moi à tes côtés, je serai là. Dans les bons comme
-            dans les mauvais moments. Je t’aime plus que tout. ❤️
-        </strong>
-    </p>
-</div>
 
+        <p>
+            Mon amour, je veux que tu saches une chose :
+            je serai toujours là pour toi. ❤️
+
+            <br><br>
+
+            Peu importe les moments difficiles, les doutes
+            ou les journées où ça ne va pas, tu pourras
+            toujours compter sur moi.
+
+            <br><br>
+
+            Je serai là pour t'écouter, te soutenir,
+            te rassurer et simplement te prendre dans mes bras
+            quand tu en auras besoin.
+
+            <br><br>
+
+            Je veux être la personne vers qui tu peux te tourner
+            sans jamais avoir peur d'être jugée ou de déranger.
+
+            <br><br>
+
+            <strong>
+                Tant que tu voudras de moi à tes côtés,
+                je serai là. Dans les bons comme dans les
+                mauvais moments. Je t'aime plus que tout. ❤️
+            </strong>
+        </p>
+
+    </div>
+
+    <button class="card retour" onclick="afficherMenuMots()">
+        ← Retour
+    </button>
+
+</div>
 
 
 <!-- =====================================================
      TON MOT
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageTonMot"
-    style="display:none;"
->
+<div class="container page" id="pageTonMot">
 
-    <div class="page-icon">
-        💌
-    </div>
+    <div class="page-icon">💌</div>
 
+    <h1>Ton mot pour moi</h1>
 
-    <h1>
-        Ton mot pour moi
-    </h1>
-
-
-    <p>
-        Laisse-moi quelque chose que je pourrai garder. ❤️
-    </p>
-
+    <p>Laisse-moi quelque chose que je pourrai garder. ❤️</p>
 
     <textarea
         id="nouveauMot"
@@ -385,86 +217,44 @@
         maxlength="500"
     ></textarea>
 
-
     <div class="compteur-caracteres">
-
-        <span id="caracteres">
-            0
-        </span>
-
-        / 500
-
+        <span id="caracteres">0</span> / 500
     </div>
 
-
-    <button
-        class="main-button"
-        onclick="envoyerMot()"
-    >
+    <button class="main-button" onclick="envoyerMot()">
         💌 Envoyer mon mot
     </button>
 
-
-    <div
-        id="messageMot"
-        class="status-message"
-    ></div>
-
+    <div id="messageMot" class="status-message"></div>
 
     <div class="anciens-mots">
 
-        <h2>
-            💗 Tes petits mots
-        </h2>
+        <h2>💗 Tes petits mots</h2>
 
-        <div id="listeMots">
-            Chargement...
-        </div>
+        <div id="listeMots"></div>
 
     </div>
 
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="afficherMenuMots()">
         ← Retour
     </button>
 
 </div>
 
 
-
 <!-- =====================================================
      SOUVENIRS
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageSouvenirs"
-    style="display:none;"
->
+<div class="container page" id="pageSouvenirs">
 
-    <div class="page-icon">
-        📸
-    </div>
+    <div class="page-icon">📸</div>
 
+    <h1>Nos souvenirs</h1>
 
-    <h1>
-        Nos souvenirs
-    </h1>
+    <p>Nos petits moments à nous ❤️</p>
 
-
-    <p>
-        Nos petits moments à nous ❤️
-    </p>
-
-
-    <video
-        controls
-        playsinline
-        class="souvenir-video"
-    >
+    <video controls playsinline class="souvenir-video">
 
         <source
             src="./videos/CCFD5C18-68E2-4EE1-BE1F-282B405A847C.MOV"
@@ -475,426 +265,214 @@
 
     </video>
 
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="retourAccueil()">
         ← Retour
     </button>
 
 </div>
-
 
 
 <!-- =====================================================
      HUMEUR
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageHumeur"
-    style="display:none;"
->
+<div class="container page" id="pageHumeur">
 
-    <div class="page-icon">
-        🌸
-    </div>
+    <div class="page-icon">🌸</div>
 
+    <h1>Mon humeur</h1>
 
-    <h1>
-        Mon humeur
-    </h1>
+    <p>Comment s'est passée ma journée ?</p>
 
-
-    <p>
-        Comment s'est passée ma journée ?
-    </p>
-
-
-    <!-- RÉVEIL -->
 
     <div class="humeur-section">
 
-        <h2>
-            🌅 Au réveil
-        </h2>
-
+        <h2>🌅 Au réveil</h2>
 
         <div class="humeur-grid">
 
-            <button
-                class="humeur"
-                onclick="choisirHumeur('reveil','😍')"
-            >
-                😍
-                <small>Super</small>
+            <button class="humeur" onclick="choisirHumeur('reveil','😍')">
+                😍<small>Super</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('reveil','😊')"
-            >
-                😊
-                <small>Bien</small>
+            <button class="humeur" onclick="choisirHumeur('reveil','😊')">
+                😊<small>Bien</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('reveil','😐')"
-            >
-                😐
-                <small>Moyen</small>
+            <button class="humeur" onclick="choisirHumeur('reveil','😐')">
+                😐<small>Moyen</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('reveil','😔')"
-            >
-                😔
-                <small>Triste</small>
+            <button class="humeur" onclick="choisirHumeur('reveil','😔')">
+                😔<small>Triste</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('reveil','😴')"
-            >
-                😴
-                <small>Fatiguée</small>
+            <button class="humeur" onclick="choisirHumeur('reveil','😴')">
+                😴<small>Fatiguée</small>
             </button>
 
         </div>
 
-
-        <div
-            id="choix-reveil"
-            class="humeur-selection"
-        ></div>
+        <div id="choix-reveil" class="humeur-selection"></div>
 
     </div>
 
 
-
-    <!-- TRAVAIL -->
-
     <div class="humeur-section">
 
-        <h2>
-            💼 Au travail
-        </h2>
-
+        <h2>💼 Au travail</h2>
 
         <div class="humeur-grid">
 
-            <button
-                class="humeur"
-                onclick="choisirHumeur('travail','😍')"
-            >
-                😍
-                <small>Super</small>
+            <button class="humeur" onclick="choisirHumeur('travail','😍')">
+                😍<small>Super</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('travail','😊')"
-            >
-                😊
-                <small>Bien</small>
+            <button class="humeur" onclick="choisirHumeur('travail','😊')">
+                😊<small>Bien</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('travail','😐')"
-            >
-                😐
-                <small>Moyen</small>
+            <button class="humeur" onclick="choisirHumeur('travail','😐')">
+                😐<small>Moyen</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('travail','😔')"
-            >
-                😔
-                <small>Triste</small>
+            <button class="humeur" onclick="choisirHumeur('travail','😔')">
+                😔<small>Triste</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('travail','😡')"
-            >
-                😡
-                <small>Énervée</small>
+            <button class="humeur" onclick="choisirHumeur('travail','😡')">
+                😡<small>Énervée</small>
             </button>
 
         </div>
 
-
-        <div
-            id="choix-travail"
-            class="humeur-selection"
-        ></div>
+        <div id="choix-travail" class="humeur-selection"></div>
 
     </div>
 
 
-
-    <!-- APRÈS TRAVAIL -->
-
     <div class="humeur-section">
 
-        <h2>
-            🏠 Après le travail
-        </h2>
-
+        <h2>🏠 Après le travail</h2>
 
         <div class="humeur-grid">
 
-            <button
-                class="humeur"
-                onclick="choisirHumeur('apres_travail','😍')"
-            >
-                😍
-                <small>Heureuse</small>
+            <button class="humeur" onclick="choisirHumeur('apres_travail','😍')">
+                😍<small>Heureuse</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('apres_travail','😊')"
-            >
-                😊
-                <small>Bien</small>
+            <button class="humeur" onclick="choisirHumeur('apres_travail','😊')">
+                😊<small>Bien</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('apres_travail','😐')"
-            >
-                😐
-                <small>Moyen</small>
+            <button class="humeur" onclick="choisirHumeur('apres_travail','😐')">
+                😐<small>Moyen</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('apres_travail','😔')"
-            >
-                😔
-                <small>Triste</small>
+            <button class="humeur" onclick="choisirHumeur('apres_travail','😔')">
+                😔<small>Triste</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('apres_travail','😴')"
-            >
-                😴
-                <small>Épuisée</small>
+            <button class="humeur" onclick="choisirHumeur('apres_travail','😴')">
+                😴<small>Épuisée</small>
             </button>
 
         </div>
 
-
-        <div
-            id="choix-apres_travail"
-            class="humeur-selection"
-        ></div>
+        <div id="choix-apres_travail" class="humeur-selection"></div>
 
     </div>
 
 
-
-    <!-- JOURNÉE -->
-
     <div class="humeur-section">
 
-        <h2>
-            🌙 Ma journée
-        </h2>
-
+        <h2>🌙 Ma journée</h2>
 
         <div class="humeur-grid">
 
-            <button
-                class="humeur"
-                onclick="choisirHumeur('journee','😍')"
-            >
-                😍
-                <small>Incroyable</small>
+            <button class="humeur" onclick="choisirHumeur('journee','😍')">
+                😍<small>Incroyable</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('journee','😊')"
-            >
-                😊
-                <small>Bonne</small>
+            <button class="humeur" onclick="choisirHumeur('journee','😊')">
+                😊<small>Bonne</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('journee','😐')"
-            >
-                😐
-                <small>Moyenne</small>
+            <button class="humeur" onclick="choisirHumeur('journee','😐')">
+                😐<small>Moyenne</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('journee','😔')"
-            >
-                😔
-                <small>Difficile</small>
+            <button class="humeur" onclick="choisirHumeur('journee','😔')">
+                😔<small>Difficile</small>
             </button>
 
-
-            <button
-                class="humeur"
-                onclick="choisirHumeur('journee','😭')"
-            >
-                😭
-                <small>Très mauvaise</small>
+            <button class="humeur" onclick="choisirHumeur('journee','😭')">
+                😭<small>Très mauvaise</small>
             </button>
 
         </div>
 
-
-        <div
-            id="choix-journee"
-            class="humeur-selection"
-        ></div>
+        <div id="choix-journee" class="humeur-selection"></div>
 
     </div>
 
 
-    <div
-        id="messageHumeur"
-        class="status-message"
-    ></div>
+    <div id="messageHumeur" class="status-message"></div>
 
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="retourAccueil()">
         ← Retour
     </button>
 
 </div>
-
 
 
 <!-- =====================================================
      HISTORIQUE
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageHistorique"
-    style="display:none;"
->
+<div class="container page" id="pageHistorique">
 
-    <div class="page-icon">
-        📊
-    </div>
+    <div class="page-icon">📊</div>
 
+    <h1>Mon historique</h1>
 
-    <h1>
-        Mon historique
-    </h1>
+    <p>Toutes mes petites journées ❤️</p>
 
+    <div id="historique"></div>
 
-    <p>
-        Toutes mes petites journées ❤️
-    </p>
-
-
-    <div id="historique">
-        Chargement...
-    </div>
-
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="retourAccueil()">
         ← Retour
     </button>
 
 </div>
-
 
 
 <!-- =====================================================
      JEU
 ===================================================== -->
 
-<div
-    class="container page"
-    id="pageJeu"
-    style="display:none;"
->
+<div class="container page" id="pageJeu">
 
-    <div class="page-icon">
-        🎮
-    </div>
+    <div class="page-icon">🎮</div>
 
+    <h1>Est-ce que tu me connais ?</h1>
 
-    <h1>
-        Est-ce que tu me connais ?
-    </h1>
+    <p>3 questions pour voir si tu connais vraiment ton homme ❤️</p>
 
+    <div id="questionsJeu"></div>
 
-    <p>
-        3 questions pour voir si tu connais vraiment ton homme ❤️
-    </p>
-
-
-    <div id="questionsJeu">
-        Chargement...
-    </div>
-
-
-    <button
-        class="main-button"
-        onclick="validerJeu()"
-    >
+    <button class="main-button" onclick="validerJeu()">
         ❤️ Valider mes réponses
     </button>
 
+    <div id="resultatJeu" class="status-message"></div>
 
-    <div
-        id="resultatJeu"
-        class="status-message"
-    ></div>
-
-
-    <button
-        class="card retour"
-        onclick="retourAccueil()"
-    >
+    <button class="card retour" onclick="retourAccueil()">
         ← Retour
     </button>
 
 </div>
 
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
 
 <script>
 
@@ -906,13 +484,12 @@
 const SUPABASE_URL =
     "https://mmlidxodagqtkzdtyjjk.supabase.co";
 
-
 const SUPABASE_KEY =
     "sb_publishable_uQayonDwge9CzFP44nnAaQ_LOweNezR";
 
 
 /* =====================================================
-   DATE DE DÉBUT
+   DATE
 ===================================================== */
 
 const dateDebut =
@@ -923,10 +500,7 @@ const dateDebut =
    SUPABASE FETCH
 ===================================================== */
 
-async function supabaseFetch(
-    table,
-    options = {}
-) {
+async function supabaseFetch(table, options = {}) {
 
     const {
         method = "GET",
@@ -935,36 +509,24 @@ async function supabaseFetch(
     } = options;
 
 
-    const response =
-        await fetch(
-            `${SUPABASE_URL}/rest/v1/${table}${query}`,
-            {
+    const response = await fetch(
+        `${SUPABASE_URL}/rest/v1/${table}${query}`,
+        {
+            method: method,
 
-                method: method,
+            headers: {
+                "apikey": SUPABASE_KEY,
+                "Authorization": `Bearer ${SUPABASE_KEY}`,
+                "Content-Type": "application/json",
+                "Prefer": "return=representation"
+            },
 
-                headers: {
-
-                    "apikey":
-                        SUPABASE_KEY,
-
-                    "Authorization":
-                        `Bearer ${SUPABASE_KEY}`,
-
-                    "Content-Type":
-                        "application/json",
-
-                    "Prefer":
-                        "return=representation"
-
-                },
-
-                body:
-                    body !== null
-                        ? JSON.stringify(body)
-                        : null
-
-            }
-        );
+            body:
+                body !== null
+                    ? JSON.stringify(body)
+                    : null
+        }
+    );
 
 
     if (!response.ok) {
@@ -988,49 +550,40 @@ async function supabaseFetch(
 }
 
 
-
 /* =====================================================
-   AFFICHAGE DES PAGES
+   NAVIGATION
 ===================================================== */
 
-function cacherToutesLesPages() {
+const toutesLesPages = [
 
-    const pages = [
+    "accueil",
+    "pageCompteur",
+    "pageMenuMots",
+    "pageMonMot",
+    "pageTonMot",
+    "pageSouvenirs",
+    "pageHumeur",
+    "pageHistorique",
+    "pageJeu"
 
-        "accueil",
-        "pageCompteur",
-        "pageMenuMots",
-        "pageMonMot",
-        "pageTonMot",
-        "pageSouvenirs",
-        "pageHumeur",
-        "pageHistorique",
-        "pageJeu"
-
-    ];
+];
 
 
-    pages.forEach(id => {
+function afficherPage(id) {
 
-        const element =
-            document.getElementById(id);
+    toutesLesPages.forEach(pageId => {
 
+        const page =
+            document.getElementById(pageId);
 
-        if (element) {
+        if (page) {
 
-            element.style.display =
+            page.style.display =
                 "none";
 
         }
 
     });
-
-}
-
-
-function afficherPage(id) {
-
-    cacherToutesLesPages();
 
 
     const page =
@@ -1045,22 +598,19 @@ function afficherPage(id) {
     }
 
 
-    window.scrollTo(
-        0,
-        0
-    );
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 }
 
 
 function retourAccueil() {
 
-    afficherPage(
-        "accueil"
-    );
+    afficherPage("accueil");
 
 }
-
 
 
 /* =====================================================
@@ -1073,35 +623,14 @@ function mettreAJourCompteur() {
         new Date();
 
 
-    let difference =
-        maintenant - dateDebut;
-
-
-    if (difference < 0) {
-
-        const temps =
-            document.getElementById(
-                "temps"
-            );
-
-
-        if (temps) {
-
-            temps.innerHTML =
-                "Notre histoire va bientôt commencer ❤️";
-
-        }
-
-
-        return;
-
-    }
-
-
     let totalSecondes =
         Math.floor(
-            difference / 1000
+            (maintenant - dateDebut) / 1000
         );
+
+
+    if (totalSecondes < 0)
+        totalSecondes = 0;
 
 
     const jours =
@@ -1110,8 +639,7 @@ function mettreAJourCompteur() {
         );
 
 
-    totalSecondes %=
-        86400;
+    totalSecondes %= 86400;
 
 
     const heures =
@@ -1120,8 +648,7 @@ function mettreAJourCompteur() {
         );
 
 
-    totalSecondes %=
-        3600;
+    totalSecondes %= 3600;
 
 
     const minutes =
@@ -1135,12 +662,11 @@ function mettreAJourCompteur() {
 
 
     const temps =
-        document.getElementById(
-            "temps"
-        );
+        document.getElementById("temps");
 
 
-    if (!temps) return;
+    if (!temps)
+        return;
 
 
     temps.innerHTML = `
@@ -1154,7 +680,6 @@ function mettreAJourCompteur() {
             </span>
 
         </div>
-
 
         <div class="compteur-petit">
 
@@ -1171,15 +696,11 @@ function mettreAJourCompteur() {
 
 function afficherCompteur() {
 
-    afficherPage(
-        "pageCompteur"
-    );
-
+    afficherPage("pageCompteur");
 
     mettreAJourCompteur();
 
 }
-
 
 
 /* =====================================================
@@ -1188,91 +709,59 @@ function afficherCompteur() {
 
 function afficherMenuMots() {
 
-    afficherPage(
-        "pageMenuMots"
-    );
+    afficherPage("pageMenuMots");
 
 }
 
 
 function afficherMonMot() {
 
-    afficherPage(
-        "pageMonMot"
-    );
+    afficherPage("pageMonMot");
 
 }
 
 
 function afficherTonMot() {
 
-    afficherPage(
-        "pageTonMot"
-    );
-
+    afficherPage("pageTonMot");
 
     chargerMots();
 
 }
 
 
-
 /* =====================================================
-   CARACTÈRES
+   COMPTEUR CARACTÈRES
 ===================================================== */
 
 const nouveauMot =
-    document.getElementById(
-        "nouveauMot"
-    );
+    document.getElementById("nouveauMot");
 
 
-if (nouveauMot) {
+nouveauMot.addEventListener(
+    "input",
+    function() {
 
-    nouveauMot.addEventListener(
-        "input",
-        function () {
+        document.getElementById(
+            "caracteres"
+        ).textContent =
+            this.value.length;
 
-            const compteur =
-                document.getElementById(
-                    "caracteres"
-                );
-
-
-            if (compteur) {
-
-                compteur.textContent =
-                    this.value.length;
-
-            }
-
-        }
-    );
-
-}
-
+    }
+);
 
 
 /* =====================================================
-   ENVOYER UN MOT
+   ENVOYER MOT
 ===================================================== */
 
 async function envoyerMot() {
 
     const input =
-        document.getElementById(
-            "nouveauMot"
-        );
-
+        document.getElementById("nouveauMot");
 
     const status =
-        document.getElementById(
-            "messageMot"
-        );
-
-
-    if (!input || !status)
-        return;
+        document.getElementById("messageMot");
 
 
     const message =
@@ -1284,10 +773,8 @@ async function envoyerMot() {
         status.textContent =
             "Écris-moi quelque chose ❤️";
 
-
         status.className =
             "status-message erreur";
-
 
         return;
 
@@ -1303,19 +790,13 @@ async function envoyerMot() {
         await supabaseFetch(
             "mots",
             {
-
                 method: "POST",
 
                 body: {
-
                     message: message,
-
                     date:
-                        new Date()
-                            .toISOString()
-
+                        new Date().toISOString()
                 }
-
             }
         );
 
@@ -1323,18 +804,10 @@ async function envoyerMot() {
         input.value = "";
 
 
-        const compteur =
-            document.getElementById(
-                "caracteres"
-            );
-
-
-        if (compteur) {
-
-            compteur.textContent =
-                "0";
-
-        }
+        document.getElementById(
+            "caracteres"
+        ).textContent =
+            "0";
 
 
         status.textContent =
@@ -1347,13 +820,11 @@ async function envoyerMot() {
 
         chargerMots();
 
+    }
 
-    } catch (error) {
+    catch (error) {
 
-        console.error(
-            "Erreur envoi mot :",
-            error
-        );
+        console.error(error);
 
 
         status.textContent =
@@ -1368,20 +839,18 @@ async function envoyerMot() {
 }
 
 
-
 /* =====================================================
-   CHARGER LES MOTS
+   CHARGER MOTS
 ===================================================== */
 
 async function chargerMots() {
 
     const liste =
-        document.getElementById(
-            "listeMots"
-        );
+        document.getElementById("listeMots");
 
 
-    if (!liste) return;
+    liste.innerHTML =
+        "Chargement...";
 
 
     try {
@@ -1390,26 +859,18 @@ async function chargerMots() {
             await supabaseFetch(
                 "mots",
                 {
-
                     query:
                         "?select=*&order=date.desc"
-
                 }
             );
 
 
         if (!mots.length) {
 
-            liste.innerHTML = `
-
-                <div class="vide">
-
+            liste.innerHTML =
+                `<div class="vide">
                     Aucun mot pour le moment ❤️
-
-                </div>
-
-            `;
-
+                </div>`;
 
             return;
 
@@ -1417,8 +878,7 @@ async function chargerMots() {
 
 
         liste.innerHTML =
-            mots.map(
-                mot => `
+            mots.map(mot => `
 
                 <div class="mot-card">
 
@@ -1430,7 +890,6 @@ async function chargerMots() {
 
                     </div>
 
-
                     <div class="mot-texte">
 
                         ${echapperHTML(
@@ -1439,41 +898,29 @@ async function chargerMots() {
 
                     </div>
 
-
                     <div class="mot-coeur">
-
                         ❤️
-
                     </div>
 
                 </div>
 
-            `
-            ).join("");
+            `).join("");
+
+    }
+
+    catch (error) {
+
+        console.error(error);
 
 
-    } catch (error) {
-
-        console.error(
-            "Erreur chargement des mots :",
-            error
-        );
-
-
-        liste.innerHTML = `
-
-            <div class="vide erreur">
-
+        liste.innerHTML =
+            `<div class="vide erreur">
                 Impossible de charger les mots 😢
-
-            </div>
-
-        `;
+            </div>`;
 
     }
 
 }
-
 
 
 /* =====================================================
@@ -1483,48 +930,57 @@ async function chargerMots() {
 let humeurDuJour = {
 
     reveil: null,
-
     travail: null,
-
     apres_travail: null,
-
     journee: null
 
 };
 
 
-/* =====================================================
-   CHOISIR UNE HUMEUR
-===================================================== */
-
-async function choisirHumeur(
-    moment,
-    humeur
-) {
+async function choisirHumeur(moment, humeur) {
 
     humeurDuJour[moment] =
         humeur;
 
 
-    const affichage =
-        document.getElementById(
-            `choix-${moment}`
+    document.querySelectorAll(
+        `.humeur[onclick*="${moment}"]`
+    ).forEach(bouton => {
+
+        bouton.classList.remove(
+            "selectionnee"
+        );
+
+    });
+
+
+    const boutons =
+        document.querySelectorAll(
+            `.humeur[onclick*="${moment}"]`
         );
 
 
-    if (affichage) {
+    boutons.forEach(bouton => {
 
-        affichage.innerHTML = `
+        if (
+            bouton.textContent.includes(
+                humeur
+            )
+        ) {
 
-            ${humeur}
+            bouton.classList.add(
+                "selectionnee"
+            );
 
-            <span>
-                Choisi ❤️
-            </span>
+        }
 
-        `;
+    });
 
-    }
+
+    afficherHumeurChoisie(
+        moment,
+        humeur
+    );
 
 
     try {
@@ -1537,13 +993,11 @@ async function choisirHumeur(
             false
         );
 
+    }
 
-    } catch (error) {
+    catch (error) {
 
-        console.error(
-            "Erreur Supabase :",
-            error
-        );
+        console.error(error);
 
 
         afficherMessageHumeur(
@@ -1556,30 +1010,18 @@ async function choisirHumeur(
 }
 
 
-
-/* =====================================================
-   ENREGISTRER HUMEUR
-   CORRECTION DU 409
-===================================================== */
-
 async function enregistrerHumeurs() {
 
     const date =
         obtenirDateLocale();
 
 
-    /*
-       On cherche d'abord la journée.
-    */
-
     const existante =
         await supabaseFetch(
             "humeurs",
             {
-
                 query:
                     `?date=eq.${date}&select=id`
-
             }
         );
 
@@ -1601,71 +1043,73 @@ async function enregistrerHumeurs() {
     };
 
 
-    /*
-       SI UNE LIGNE EXISTE :
-       PATCH = modification.
-    */
-
     if (
         existante &&
         existante.length > 0
     ) {
 
-        const id =
-            existante[0].id;
+        await supabaseFetch(
+            "humeurs",
+            {
+                method: "PATCH",
 
+                query:
+                    `?id=eq.${existante[0].id}`,
+
+                body:
+                    donnees
+            }
+        );
+
+    }
+
+    else {
 
         await supabaseFetch(
             "humeurs",
             {
+                method: "POST",
 
-                method: "PATCH",
-
-                query:
-                    `?id=eq.${id}`,
-
-                body:
-                    donnees
-
+                body: {
+                    date: date,
+                    ...donnees
+                }
             }
         );
 
+    }
+
+}
+
+
+function afficherHumeurChoisie(moment, humeur) {
+
+    const element =
+        document.getElementById(
+            `choix-${moment}`
+        );
+
+
+    if (!element)
+        return;
+
+
+    if (!humeur) {
+
+        element.innerHTML = "";
 
         return;
 
     }
 
 
-    /*
-       SI AUCUNE LIGNE :
-       POST = création.
-    */
-
-    await supabaseFetch(
-        "humeurs",
-        {
-
-            method: "POST",
-
-            body: {
-
-                date:
-                    date,
-
-                ...donnees
-
-            }
-
-        }
-    );
+    element.innerHTML = `
+        ${humeur}
+        <span>Choisi ❤️</span>
+    `;
 
 }
 
-
-
-/* =====================================================
-   MESSAGE HUMEUR
-===================================================== */
 
 function afficherMessageHumeur(
     message,
@@ -1676,10 +1120,6 @@ function afficherMessageHumeur(
         document.getElementById(
             "messageHumeur"
         );
-
-
-    if (!element)
-        return;
 
 
     element.textContent =
@@ -1694,11 +1134,6 @@ function afficherMessageHumeur(
 }
 
 
-
-/* =====================================================
-   CHARGER HUMEUR DU JOUR
-===================================================== */
-
 async function chargerHumeurDuJour() {
 
     try {
@@ -1711,130 +1146,60 @@ async function chargerHumeurDuJour() {
             await supabaseFetch(
                 "humeurs",
                 {
-
                     query:
                         `?date=eq.${date}&select=*`
-
                 }
             );
 
 
         if (
-            result &&
             result.length > 0
         ) {
 
-            const humeur =
+            humeurDuJour =
                 result[0];
-
-
-            humeurDuJour = {
-
-                reveil:
-                    humeur.reveil || null,
-
-                travail:
-                    humeur.travail || null,
-
-                apres_travail:
-                    humeur.apres_travail || null,
-
-                journee:
-                    humeur.journee || null
-
-            };
 
 
             afficherHumeurChoisie(
                 "reveil",
-                humeur.reveil
+                humeurDuJour.reveil
             );
-
 
             afficherHumeurChoisie(
                 "travail",
-                humeur.travail
+                humeurDuJour.travail
             );
-
 
             afficherHumeurChoisie(
                 "apres_travail",
-                humeur.apres_travail
+                humeurDuJour.apres_travail
             );
-
 
             afficherHumeurChoisie(
                 "journee",
-                humeur.journee
+                humeurDuJour.journee
             );
 
         }
 
-    } catch (error) {
+    }
 
-        console.error(
-            "Erreur chargement humeur :",
-            error
-        );
+    catch (error) {
+
+        console.error(error);
 
     }
 
 }
 
-
-
-/* =====================================================
-   AFFICHER HUMEUR CHOISIE
-===================================================== */
-
-function afficherHumeurChoisie(
-    moment,
-    humeur
-) {
-
-    if (!humeur)
-        return;
-
-
-    const element =
-        document.getElementById(
-            `choix-${moment}`
-        );
-
-
-    if (element) {
-
-        element.innerHTML = `
-
-            ${humeur}
-
-            <span>
-                Choisi ❤️
-            </span>
-
-        `;
-
-    }
-
-}
-
-
-
-/* =====================================================
-   PAGE HUMEUR
-===================================================== */
 
 function afficherHumeur() {
 
-    afficherPage(
-        "pageHumeur"
-    );
-
+    afficherPage("pageHumeur");
 
     chargerHumeurDuJour();
 
 }
-
 
 
 /* =====================================================
@@ -1854,10 +1219,6 @@ async function afficherHistorique() {
         );
 
 
-    if (!historique)
-        return;
-
-
     historique.innerHTML =
         "Chargement...";
 
@@ -1868,26 +1229,18 @@ async function afficherHistorique() {
             await supabaseFetch(
                 "humeurs",
                 {
-
                     query:
                         "?select=*&order=date.desc"
-
                 }
             );
 
 
         if (!result.length) {
 
-            historique.innerHTML = `
-
-                <div class="vide">
-
+            historique.innerHTML =
+                `<div class="vide">
                     Aucun historique pour le moment ❤️
-
-                </div>
-
-            `;
-
+                </div>`;
 
             return;
 
@@ -1895,8 +1248,7 @@ async function afficherHistorique() {
 
 
         historique.innerHTML =
-            result.map(
-                jour => `
+            result.map(jour => `
 
                 <div class="historique-card">
 
@@ -1908,86 +1260,53 @@ async function afficherHistorique() {
 
                     </div>
 
-
                     <div class="historique-ligne">
-
-                        <span>
-                            🌅 Réveil
-                        </span>
-
+                        <span>🌅 Réveil</span>
                         <strong>
                             ${jour.reveil || "—"}
                         </strong>
-
                     </div>
 
-
                     <div class="historique-ligne">
-
-                        <span>
-                            💼 Travail
-                        </span>
-
+                        <span>💼 Travail</span>
                         <strong>
                             ${jour.travail || "—"}
                         </strong>
-
                     </div>
 
-
                     <div class="historique-ligne">
-
-                        <span>
-                            🏠 Après travail
-                        </span>
-
+                        <span>🏠 Après travail</span>
                         <strong>
                             ${jour.apres_travail || "—"}
                         </strong>
-
                     </div>
 
-
                     <div class="historique-ligne">
-
-                        <span>
-                            🌙 Journée
-                        </span>
-
+                        <span>🌙 Journée</span>
                         <strong>
                             ${jour.journee || "—"}
                         </strong>
-
                     </div>
 
                 </div>
 
-            `
-            ).join("");
+            `).join("");
+
+    }
+
+    catch (error) {
+
+        console.error(error);
 
 
-    } catch (error) {
-
-        console.error(
-            "Erreur historique :",
-            error
-        );
-
-
-        historique.innerHTML = `
-
-            <div class="vide erreur">
-
+        historique.innerHTML =
+            `<div class="vide erreur">
                 Impossible de charger l'historique 😢
-
-            </div>
-
-        `;
+            </div>`;
 
     }
 
 }
-
 
 
 /* =====================================================
@@ -1996,12 +1315,9 @@ async function afficherHistorique() {
 
 function afficherSouvenirs() {
 
-    afficherPage(
-        "pageSouvenirs"
-    );
+    afficherPage("pageSouvenirs");
 
 }
-
 
 
 /* =====================================================
@@ -2011,102 +1327,63 @@ function afficherSouvenirs() {
 const questionsJeu = [
 
     {
-
         question:
             "Qu'est-ce que j'aime le plus chez toi ?",
 
         reponses: [
-
-            "tes yeux",
-
-            "tes yeux 👀"
-
+            "tes yeux"
         ]
-
     },
 
-
     {
-
         question:
             "Quel est mon plus grand rêve avec toi ?",
 
         reponses: [
-
             "avoir des enfants avec toi",
-
             "avoir des enfants"
-
         ]
-
     },
 
-
     {
-
         question:
             "À quoi ressemble ma journée parfaite avec toi ?",
 
         reponses: [
-
             "cinéma avec des bubble tea et finir dans un airbnb à dormir ensemble",
-
-            "cinéma + bubble tea + airbnb",
-
-            "cinema avec des bubble tea et finir dans un rbnb a dormir ensemble"
-
+            "cinema avec des bubble tea et finir dans un airbnb a dormir ensemble",
+            "cinéma bubble tea airbnb",
+            "cinema bubble tea airbnb"
         ]
-
     },
 
-
     {
-
         question:
             "Quel est mon artiste préféré ?",
 
         reponses: [
-
-            "bouss",
-
-            "bouss."
-
+            "bouss"
         ]
-
     },
 
-
     {
-
         question:
             "Qu'est-ce qui peut directement me mettre de mauvaise humeur ?",
 
         reponses: [
-
-            "qu'on me parle mal",
-
-            "parler mal",
-
-            "qu'on me parle mal."
-
+            "quon me parle mal",
+            "qu on me parle mal",
+            "parler mal"
         ]
-
     },
 
-
     {
-
         question:
             "Qu'est-ce que je veux absolument construire avec toi ?",
 
         reponses: [
-
-            "une famille",
-
-            "une famille ❤️"
-
+            "une famille"
         ]
-
     }
 
 ];
@@ -2115,46 +1392,10 @@ const questionsJeu = [
 let questionsDuJour = [];
 
 
-/* =====================================================
-   JOUR DU JEU
-===================================================== */
-
-function obtenirJourJeu() {
-
-    const maintenant =
-        new Date();
-
-
-    return (
-
-        maintenant.getFullYear() +
-
-        "-" +
-
-        String(
-            maintenant.getMonth() + 1
-        ).padStart(2, "0") +
-
-        "-" +
-
-        String(
-            maintenant.getDate()
-        ).padStart(2, "0")
-
-    );
-
-}
-
-
-
-/* =====================================================
-   QUESTIONS DU JOUR
-===================================================== */
-
 function creerQuestionsDuJour() {
 
-    const jour =
-        obtenirJourJeu();
+    const aujourdHui =
+        obtenirDateLocale();
 
 
     let graine = 0;
@@ -2162,12 +1403,12 @@ function creerQuestionsDuJour() {
 
     for (
         let i = 0;
-        i < jour.length;
+        i < aujourdHui.length;
         i++
     ) {
 
         graine +=
-            jour.charCodeAt(i);
+            aujourdHui.charCodeAt(i);
 
     }
 
@@ -2183,38 +1424,21 @@ function creerQuestionsDuJour() {
 
 
     questionsDuJour =
-        melange.slice(
-            0,
-            3
-        );
+        melange.slice(0, 3);
 
 }
 
 
-
-/* =====================================================
-   AFFICHER LE JEU
-===================================================== */
-
 function afficherJeu() {
 
-    afficherPage(
-        "pageJeu"
-    );
-
+    afficherPage("pageJeu");
 
     creerQuestionsDuJour();
-
 
     afficherQuestions();
 
 }
 
-
-
-/* =====================================================
-   AFFICHER QUESTIONS
-===================================================== */
 
 function afficherQuestions() {
 
@@ -2224,14 +1448,9 @@ function afficherQuestions() {
         );
 
 
-    if (!zone)
-        return;
-
-
     zone.innerHTML =
-        questionsDuJour
-            .map(
-                (question, index) => `
+        questionsDuJour.map(
+            (question, index) => `
 
                 <div class="message-box">
 
@@ -2239,11 +1458,11 @@ function afficherQuestions() {
                         Question ${index + 1}
                     </h2>
 
-
                     <p>
-                        ${question.question}
+                        <strong>
+                            ${question.question}
+                        </strong>
                     </p>
-
 
                     <input
                         type="text"
@@ -2256,20 +1475,12 @@ function afficherQuestions() {
                 </div>
 
             `
-            )
-            .join("");
+        ).join("");
 
 }
 
 
-
-/* =====================================================
-   NORMALISER
-===================================================== */
-
-function normaliserTexte(
-    texte
-) {
+function normaliserTexte(texte) {
 
     return texte
 
@@ -2291,11 +1502,6 @@ function normaliserTexte(
 
 }
 
-
-
-/* =====================================================
-   VALIDER JEU
-===================================================== */
 
 function validerJeu() {
 
@@ -2351,10 +1557,6 @@ function validerJeu() {
         );
 
 
-    if (!resultat)
-        return;
-
-
     let message;
 
 
@@ -2397,7 +1599,6 @@ function validerJeu() {
 }
 
 
-
 /* =====================================================
    OUTILS
 ===================================================== */
@@ -2429,39 +1630,35 @@ function obtenirDateLocale() {
 }
 
 
-
-function formaterDate(
-    date
-) {
+function formaterDate(date) {
 
     if (!date)
         return "";
 
 
-    const parties =
-        date.split("-");
+    const vraieDate =
+        new Date(date);
 
 
-    if (
-        parties.length !== 3
-    ) {
-
+    if (isNaN(vraieDate))
         return date;
 
-    }
 
-
-    return `${parties[2]}/${parties[1]}/${parties[0]}`;
+    return vraieDate.toLocaleDateString(
+        "fr-FR",
+        {
+            day: "2-digit",
+            month: "2-digit",
+            year: "numeric"
+        }
+    );
 
 }
 
 
+function echapperHTML(texte) {
 
-function echapperHTML(
-    texte
-) {
-
-    return texte
+    return String(texte)
 
         .replace(
             /&/g,
@@ -2491,18 +1688,18 @@ function echapperHTML(
 }
 
 
-
 /* =====================================================
-   COMPTEUR AUTOMATIQUE
+   INITIALISATION
 ===================================================== */
+
+afficherPage("accueil");
+
+mettreAJourCompteur();
 
 setInterval(
     mettreAJourCompteur,
     1000
 );
-
-
-mettreAJourCompteur();
 
 
 </script>
