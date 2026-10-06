@@ -16,7 +16,6 @@
 
 <body>
 
-
 <!-- =====================================================
      ACCUEIL
 ===================================================== -->
@@ -95,7 +94,7 @@
      COMPTEUR
 ===================================================== -->
 
-<div class="container page" id="pageCompteur">
+<div class="container page" id="pageCompteur" style="display:none;">
 
     <div class="page-icon">❤️</div>
 
@@ -105,7 +104,7 @@
 
     <div id="temps"></div>
 
-    <button class="card retour" onclick="retourAccueil()">
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -116,7 +115,7 @@
      MENU MOTS
 ===================================================== -->
 
-<div class="container page" id="pageMenuMots">
+<div class="container page" id="pageMenuMots" style="display:none;">
 
     <div class="page-icon">💌</div>
 
@@ -140,7 +139,7 @@
 
     </div>
 
-    <button class="card retour" onclick="retourAccueil()">
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -151,26 +150,26 @@
      MON MOT
 ===================================================== -->
 
-<div class="container page" id="pageMonMot">
+<div class="container page" id="pageMonMot" style="display:none;">
 
     <div class="page-icon">❤️</div>
 
     <h1>Mon mot pour toi</h1>
 
-<div class="message-box">
-    <p>
-        Mon amour ❤️
-        <br><br>
-        Je suis tellement, mais tellement pressé d’être à ton anniversaire. 🥹🎂
-        <br><br>
-        Plus que 9 jours et j’ai l’impression que je vais devenir fou tellement j’ai hâte. 😭❤️
-        <br><br>
-        J’ai tellement envie d’être à ce jour, de te voir sourire, de profiter de toi et de rendre cette journée aussi belle que possible pour toi.
-        <br><br>
-        <strong>
-            9 jours seulement… j’ai beaucoup trop hâte de fêter ton anniversaire avec toi mon cœur. ❤️🎁🥹
-        </strong>
-    </p>
+    <div class="message-box">
+
+        <p>
+            J’ai pas juste envie de te voir, j’en ai besoin. ❤️
+            <br><br>
+            J’ai besoin de ton sourire, de ta présence, de toi tout simplement.
+        </p>
+
+    </div>
+
+    <button class="card retour" onclick="retourPagePrecedente()">
+        ← Retour
+    </button>
+
 </div>
 
 
@@ -178,7 +177,7 @@
      TON MOT
 ===================================================== -->
 
-<div class="container page" id="pageTonMot">
+<div class="container page" id="pageTonMot" style="display:none;">
 
     <div class="page-icon">💌</div>
 
@@ -211,7 +210,7 @@
 
     </div>
 
-    <button class="card retour" onclick="afficherMenuMots()">
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -222,7 +221,7 @@
      SOUVENIRS
 ===================================================== -->
 
-<div class="container page" id="pageSouvenirs">
+<div class="container page" id="pageSouvenirs" style="display:none;">
 
     <div class="page-icon">📸</div>
 
@@ -230,7 +229,11 @@
 
     <p>Nos petits moments à nous ❤️</p>
 
-    <video controls playsinline class="souvenir-video">
+    <video
+        controls
+        playsinline
+        class="souvenir-video"
+    >
 
         <source
             src="./videos/CCFD5C18-68E2-4EE1-BE1F-282B405A847C.MOV"
@@ -241,7 +244,7 @@
 
     </video>
 
-    <button class="card retour" onclick="retourAccueil()">
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -252,7 +255,7 @@
      HUMEUR
 ===================================================== -->
 
-<div class="container page" id="pageHumeur">
+<div class="container page" id="pageHumeur" style="display:none;">
 
     <div class="page-icon">🌸</div>
 
@@ -267,24 +270,54 @@
 
         <div class="humeur-grid">
 
-            <button class="humeur" onclick="choisirHumeur('reveil','😍')">
-                😍<small>Super</small>
+            <button
+                class="humeur"
+                data-moment="reveil"
+                data-humeur="😍"
+                onclick="choisirHumeur('reveil','😍')"
+            >
+                😍
+                <small>Super</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('reveil','😊')">
-                😊<small>Bien</small>
+            <button
+                class="humeur"
+                data-moment="reveil"
+                data-humeur="😊"
+                onclick="choisirHumeur('reveil','😊')"
+            >
+                😊
+                <small>Bien</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('reveil','😐')">
-                😐<small>Moyen</small>
+            <button
+                class="humeur"
+                data-moment="reveil"
+                data-humeur="😐"
+                onclick="choisirHumeur('reveil','😐')"
+            >
+                😐
+                <small>Moyen</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('reveil','😔')">
-                😔<small>Triste</small>
+            <button
+                class="humeur"
+                data-moment="reveil"
+                data-humeur="😔"
+                onclick="choisirHumeur('reveil','😔')"
+            >
+                😔
+                <small>Triste</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('reveil','😴')">
-                😴<small>Fatiguée</small>
+            <button
+                class="humeur"
+                data-moment="reveil"
+                data-humeur="😴"
+                onclick="choisirHumeur('reveil','😴')"
+            >
+                😴
+                <small>Fatiguée</small>
             </button>
 
         </div>
@@ -300,24 +333,54 @@
 
         <div class="humeur-grid">
 
-            <button class="humeur" onclick="choisirHumeur('travail','😍')">
-                😍<small>Super</small>
+            <button
+                class="humeur"
+                data-moment="travail"
+                data-humeur="😍"
+                onclick="choisirHumeur('travail','😍')"
+            >
+                😍
+                <small>Super</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('travail','😊')">
-                😊<small>Bien</small>
+            <button
+                class="humeur"
+                data-moment="travail"
+                data-humeur="😊"
+                onclick="choisirHumeur('travail','😊')"
+            >
+                😊
+                <small>Bien</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('travail','😐')">
-                😐<small>Moyen</small>
+            <button
+                class="humeur"
+                data-moment="travail"
+                data-humeur="😐"
+                onclick="choisirHumeur('travail','😐')"
+            >
+                😐
+                <small>Moyen</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('travail','😔')">
-                😔<small>Triste</small>
+            <button
+                class="humeur"
+                data-moment="travail"
+                data-humeur="😔"
+                onclick="choisirHumeur('travail','😔')"
+            >
+                😔
+                <small>Triste</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('travail','😡')">
-                😡<small>Énervée</small>
+            <button
+                class="humeur"
+                data-moment="travail"
+                data-humeur="😡"
+                onclick="choisirHumeur('travail','😡')"
+            >
+                😡
+                <small>Énervée</small>
             </button>
 
         </div>
@@ -333,24 +396,54 @@
 
         <div class="humeur-grid">
 
-            <button class="humeur" onclick="choisirHumeur('apres_travail','😍')">
-                😍<small>Heureuse</small>
+            <button
+                class="humeur"
+                data-moment="apres_travail"
+                data-humeur="😍"
+                onclick="choisirHumeur('apres_travail','😍')"
+            >
+                😍
+                <small>Heureuse</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('apres_travail','😊')">
-                😊<small>Bien</small>
+            <button
+                class="humeur"
+                data-moment="apres_travail"
+                data-humeur="😊"
+                onclick="choisirHumeur('apres_travail','😊')"
+            >
+                😊
+                <small>Bien</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('apres_travail','😐')">
-                😐<small>Moyen</small>
+            <button
+                class="humeur"
+                data-moment="apres_travail"
+                data-humeur="😐"
+                onclick="choisirHumeur('apres_travail','😐')"
+            >
+                😐
+                <small>Moyen</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('apres_travail','😔')">
-                😔<small>Triste</small>
+            <button
+                class="humeur"
+                data-moment="apres_travail"
+                data-humeur="😔"
+                onclick="choisirHumeur('apres_travail','😔')"
+            >
+                😔
+                <small>Triste</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('apres_travail','😴')">
-                😴<small>Épuisée</small>
+            <button
+                class="humeur"
+                data-moment="apres_travail"
+                data-humeur="😴"
+                onclick="choisirHumeur('apres_travail','😴')"
+            >
+                😴
+                <small>Épuisée</small>
             </button>
 
         </div>
@@ -366,24 +459,54 @@
 
         <div class="humeur-grid">
 
-            <button class="humeur" onclick="choisirHumeur('journee','😍')">
-                😍<small>Incroyable</small>
+            <button
+                class="humeur"
+                data-moment="journee"
+                data-humeur="😍"
+                onclick="choisirHumeur('journee','😍')"
+            >
+                😍
+                <small>Incroyable</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('journee','😊')">
-                😊<small>Bonne</small>
+            <button
+                class="humeur"
+                data-moment="journee"
+                data-humeur="😊"
+                onclick="choisirHumeur('journee','😊')"
+            >
+                😊
+                <small>Bonne</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('journee','😐')">
-                😐<small>Moyenne</small>
+            <button
+                class="humeur"
+                data-moment="journee"
+                data-humeur="😐"
+                onclick="choisirHumeur('journee','😐')"
+            >
+                😐
+                <small>Moyenne</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('journee','😔')">
-                😔<small>Difficile</small>
+            <button
+                class="humeur"
+                data-moment="journee"
+                data-humeur="😔"
+                onclick="choisirHumeur('journee','😔')"
+            >
+                😔
+                <small>Difficile</small>
             </button>
 
-            <button class="humeur" onclick="choisirHumeur('journee','😭')">
-                😭<small>Très mauvaise</small>
+            <button
+                class="humeur"
+                data-moment="journee"
+                data-humeur="😭"
+                onclick="choisirHumeur('journee','😭')"
+            >
+                😭
+                <small>Très mauvaise</small>
             </button>
 
         </div>
@@ -395,7 +518,8 @@
 
     <div id="messageHumeur" class="status-message"></div>
 
-    <button class="card retour" onclick="retourAccueil()">
+
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -406,7 +530,7 @@
      HISTORIQUE
 ===================================================== -->
 
-<div class="container page" id="pageHistorique">
+<div class="container page" id="pageHistorique" style="display:none;">
 
     <div class="page-icon">📊</div>
 
@@ -416,7 +540,7 @@
 
     <div id="historique"></div>
 
-    <button class="card retour" onclick="retourAccueil()">
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -427,7 +551,7 @@
      JEU
 ===================================================== -->
 
-<div class="container page" id="pageJeu">
+<div class="container page" id="pageJeu" style="display:none;">
 
     <div class="page-icon">🎮</div>
 
@@ -443,7 +567,7 @@
 
     <div id="resultatJeu" class="status-message"></div>
 
-    <button class="card retour" onclick="retourAccueil()">
+    <button class="card retour" onclick="retourPagePrecedente()">
         ← Retour
     </button>
 
@@ -451,7 +575,6 @@
 
 
 <script>
-
 
 /* =====================================================
    SUPABASE
@@ -465,7 +588,7 @@ const SUPABASE_KEY =
 
 
 /* =====================================================
-   DATE
+   DATE DE DÉBUT
 ===================================================== */
 
 const dateDebut =
@@ -485,24 +608,25 @@ async function supabaseFetch(table, options = {}) {
     } = options;
 
 
-    const response = await fetch(
-        `${SUPABASE_URL}/rest/v1/${table}${query}`,
-        {
-            method: method,
+    const response =
+        await fetch(
+            `${SUPABASE_URL}/rest/v1/${table}${query}`,
+            {
+                method,
 
-            headers: {
-                "apikey": SUPABASE_KEY,
-                "Authorization": `Bearer ${SUPABASE_KEY}`,
-                "Content-Type": "application/json",
-                "Prefer": "return=representation"
-            },
+                headers: {
+                    "apikey": SUPABASE_KEY,
+                    "Authorization": `Bearer ${SUPABASE_KEY}`,
+                    "Content-Type": "application/json",
+                    "Prefer": "return=representation"
+                },
 
-            body:
-                body !== null
-                    ? JSON.stringify(body)
-                    : null
-        }
-    );
+                body:
+                    body !== null
+                        ? JSON.stringify(body)
+                        : null
+            }
+        );
 
 
     if (!response.ok) {
@@ -510,7 +634,10 @@ async function supabaseFetch(table, options = {}) {
         const erreur =
             await response.text();
 
-        throw new Error(erreur);
+
+        throw new Error(
+            `Supabase ${response.status}: ${erreur}`
+        );
 
     }
 
@@ -519,9 +646,12 @@ async function supabaseFetch(table, options = {}) {
         await response.text();
 
 
-    return texte
-        ? JSON.parse(texte)
-        : [];
+    if (!texte) {
+        return [];
+    }
+
+
+    return JSON.parse(texte);
 
 }
 
@@ -531,7 +661,6 @@ async function supabaseFetch(table, options = {}) {
 ===================================================== */
 
 const toutesLesPages = [
-
     "accueil",
     "pageCompteur",
     "pageMenuMots",
@@ -541,11 +670,27 @@ const toutesLesPages = [
     "pageHumeur",
     "pageHistorique",
     "pageJeu"
-
 ];
 
 
-function afficherPage(id) {
+let pageActuelle = "accueil";
+
+let historiqueApplication = ["accueil"];
+
+
+/* =====================================================
+   AFFICHER UNE PAGE
+===================================================== */
+
+function ouvrirPage(
+    id,
+    ajouterHistorique = true
+) {
+
+    if (!toutesLesPages.includes(id)) {
+        return;
+    }
+
 
     toutesLesPages.forEach(pageId => {
 
@@ -566,10 +711,32 @@ function afficherPage(id) {
         document.getElementById(id);
 
 
-    if (page) {
+    if (!page) {
+        return;
+    }
 
-        page.style.display =
-            "block";
+
+    page.style.display =
+        "block";
+
+
+    pageActuelle =
+        id;
+
+
+    if (ajouterHistorique) {
+
+        historiqueApplication.push(id);
+
+
+        window.history.pushState(
+            {
+                page: id,
+                application: true
+            },
+            "",
+            `#${id}`
+        );
 
     }
 
@@ -579,14 +746,153 @@ function afficherPage(id) {
         behavior: "smooth"
     });
 
+
+    /* Chargements spécifiques */
+
+    if (id === "pageCompteur") {
+        mettreAJourCompteur();
+    }
+
+
+    if (id === "pageTonMot") {
+        chargerMots();
+    }
+
+
+    if (id === "pageHumeur") {
+        chargerHumeurDuJour();
+    }
+
+
+    if (id === "pageHistorique") {
+        chargerHistorique();
+    }
+
+
+    if (id === "pageJeu") {
+
+        creerQuestionsDuJour();
+
+        afficherQuestions();
+
+    }
+
 }
 
 
-function retourAccueil() {
+/* =====================================================
+   RETOUR À LA PAGE PRÉCÉDENTE
+===================================================== */
 
-    afficherPage("accueil");
+function retourPagePrecedente() {
+
+    if (
+        historiqueApplication.length > 1
+    ) {
+
+        window.history.back();
+
+        return;
+
+    }
+
+
+    ouvrirPage(
+        "accueil",
+        false
+    );
 
 }
+
+
+/* =====================================================
+   RETOUR NAVIGATEUR
+===================================================== */
+
+window.addEventListener(
+    "popstate",
+    function(event) {
+
+        let page =
+            event.state &&
+            event.state.application
+                ? event.state.page
+                : "accueil";
+
+
+        if (
+            !toutesLesPages.includes(page)
+        ) {
+
+            page = "accueil";
+
+        }
+
+
+        if (
+            historiqueApplication.length > 1 &&
+            historiqueApplication[
+                historiqueApplication.length - 1
+            ] === pageActuelle
+        ) {
+
+            historiqueApplication.pop();
+
+        }
+
+
+        if (
+            !historiqueApplication.includes(page)
+        ) {
+
+            historiqueApplication.push(page);
+
+        }
+
+
+        ouvrirPage(
+            page,
+            false
+        );
+
+    }
+);
+
+
+/* =====================================================
+   INITIALISATION NAVIGATION
+===================================================== */
+
+const hash =
+    window.location.hash
+        .replace("#", "");
+
+
+const pageDeDepart =
+    toutesLesPages.includes(hash)
+        ? hash
+        : "accueil";
+
+
+window.history.replaceState(
+    {
+        page: pageDeDepart,
+        application: true
+    },
+    "",
+    `#${pageDeDepart}`
+);
+
+
+historiqueApplication = [
+    pageDeDepart
+];
+
+
+ouvrirPage(
+    pageDeDepart,
+    false
+);
 
 
 /* =====================================================
@@ -601,17 +907,22 @@ function mettreAJourCompteur() {
 
     let totalSecondes =
         Math.floor(
-            (maintenant - dateDebut) / 1000
+            (
+                maintenant -
+                dateDebut
+            ) / 1000
         );
 
 
-    if (totalSecondes < 0)
+    if (totalSecondes < 0) {
         totalSecondes = 0;
+    }
 
 
     const jours =
         Math.floor(
-            totalSecondes / 86400
+            totalSecondes /
+            86400
         );
 
 
@@ -620,7 +931,8 @@ function mettreAJourCompteur() {
 
     const heures =
         Math.floor(
-            totalSecondes / 3600
+            totalSecondes /
+            3600
         );
 
 
@@ -629,7 +941,8 @@ function mettreAJourCompteur() {
 
     const minutes =
         Math.floor(
-            totalSecondes / 60
+            totalSecondes /
+            60
         );
 
 
@@ -638,11 +951,14 @@ function mettreAJourCompteur() {
 
 
     const temps =
-        document.getElementById("temps");
+        document.getElementById(
+            "temps"
+        );
 
 
-    if (!temps)
+    if (!temps) {
         return;
+    }
 
 
     temps.innerHTML = `
@@ -672,9 +988,9 @@ function mettreAJourCompteur() {
 
 function afficherCompteur() {
 
-    afficherPage("pageCompteur");
-
-    mettreAJourCompteur();
+    ouvrirPage(
+        "pageCompteur"
+    );
 
 }
 
@@ -685,59 +1001,87 @@ function afficherCompteur() {
 
 function afficherMenuMots() {
 
-    afficherPage("pageMenuMots");
+    ouvrirPage(
+        "pageMenuMots"
+    );
 
 }
 
 
 function afficherMonMot() {
 
-    afficherPage("pageMonMot");
+    ouvrirPage(
+        "pageMonMot"
+    );
 
 }
 
 
 function afficherTonMot() {
 
-    afficherPage("pageTonMot");
-
-    chargerMots();
+    ouvrirPage(
+        "pageTonMot"
+    );
 
 }
 
 
 /* =====================================================
-   COMPTEUR CARACTÈRES
+   COMPTEUR DE CARACTÈRES
 ===================================================== */
 
 const nouveauMot =
-    document.getElementById("nouveauMot");
+    document.getElementById(
+        "nouveauMot"
+    );
 
 
-nouveauMot.addEventListener(
-    "input",
-    function() {
+if (nouveauMot) {
 
-        document.getElementById(
-            "caracteres"
-        ).textContent =
-            this.value.length;
+    nouveauMot.addEventListener(
+        "input",
+        function() {
 
-    }
-);
+            const compteur =
+                document.getElementById(
+                    "caracteres"
+                );
+
+
+            if (compteur) {
+
+                compteur.textContent =
+                    this.value.length;
+
+            }
+
+        }
+    );
+
+}
 
 
 /* =====================================================
-   ENVOYER MOT
+   ENVOYER UN MOT
 ===================================================== */
 
 async function envoyerMot() {
 
     const input =
-        document.getElementById("nouveauMot");
+        document.getElementById(
+            "nouveauMot"
+        );
+
 
     const status =
-        document.getElementById("messageMot");
+        document.getElementById(
+            "messageMot"
+        );
+
+
+    if (!input || !status) {
+        return;
+    }
 
 
     const message =
@@ -760,6 +1104,9 @@ async function envoyerMot() {
     status.textContent =
         "Envoi en cours...";
 
+    status.className =
+        "status-message";
+
 
     try {
 
@@ -769,7 +1116,7 @@ async function envoyerMot() {
                 method: "POST",
 
                 body: {
-                    message: message,
+                    message,
                     date:
                         new Date().toISOString()
                 }
@@ -780,32 +1127,41 @@ async function envoyerMot() {
         input.value = "";
 
 
-        document.getElementById(
-            "caracteres"
-        ).textContent =
-            "0";
+        const compteur =
+            document.getElementById(
+                "caracteres"
+            );
+
+
+        if (compteur) {
+
+            compteur.textContent =
+                "0";
+
+        }
 
 
         status.textContent =
             "Ton mot est bien enregistré ❤️";
 
-
         status.className =
             "status-message succes";
 
 
-        chargerMots();
+        await chargerMots();
 
     }
 
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Erreur envoyerMot :",
+            error
+        );
 
 
         status.textContent =
             "Impossible d'envoyer ton mot 😢";
-
 
         status.className =
             "status-message erreur";
@@ -816,13 +1172,20 @@ async function envoyerMot() {
 
 
 /* =====================================================
-   CHARGER MOTS
+   CHARGER LES MOTS
 ===================================================== */
 
 async function chargerMots() {
 
     const liste =
-        document.getElementById("listeMots");
+        document.getElementById(
+            "listeMots"
+        );
+
+
+    if (!liste) {
+        return;
+    }
 
 
     liste.innerHTML =
@@ -844,9 +1207,11 @@ async function chargerMots() {
         if (!mots.length) {
 
             liste.innerHTML =
-                `<div class="vide">
+                `
+                <div class="vide">
                     Aucun mot pour le moment ❤️
-                </div>`;
+                </div>
+                `;
 
             return;
 
@@ -854,24 +1219,20 @@ async function chargerMots() {
 
 
         liste.innerHTML =
-            mots.map(mot => `
+            mots
+                .map(
+                    mot => `
 
                 <div class="mot-card">
 
                     <div class="mot-date">
-
-                        ${formaterDate(
-                            mot.date
-                        )}
-
+                        ${formaterDate(mot.date)}
                     </div>
 
                     <div class="mot-texte">
-
                         ${echapperHTML(
                             mot.message || ""
                         )}
-
                     </div>
 
                     <div class="mot-coeur">
@@ -880,19 +1241,26 @@ async function chargerMots() {
 
                 </div>
 
-            `).join("");
+            `
+                )
+                .join("");
 
     }
 
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Erreur chargerMots :",
+            error
+        );
 
 
         liste.innerHTML =
-            `<div class="vide erreur">
+            `
+            <div class="vide erreur">
                 Impossible de charger les mots 😢
-            </div>`;
+            </div>
+            `;
 
     }
 
@@ -906,51 +1274,56 @@ async function chargerMots() {
 let humeurDuJour = {
 
     reveil: null,
+
     travail: null,
+
     apres_travail: null,
+
     journee: null
 
 };
 
 
-async function choisirHumeur(moment, humeur) {
+/* =====================================================
+   CHOISIR UNE HUMEUR
+===================================================== */
+
+async function choisirHumeur(
+    moment,
+    humeur
+) {
 
     humeurDuJour[moment] =
         humeur;
 
 
-    document.querySelectorAll(
-        `.humeur[onclick*="${moment}"]`
-    ).forEach(bouton => {
-
-        bouton.classList.remove(
-            "selectionnee"
-        );
-
-    });
-
-
     const boutons =
         document.querySelectorAll(
-            `.humeur[onclick*="${moment}"]`
+            `.humeur[data-moment="${moment}"]`
         );
 
 
-    boutons.forEach(bouton => {
+    boutons.forEach(
+        bouton => {
 
-        if (
-            bouton.textContent.includes(
-                humeur
-            )
-        ) {
-
-            bouton.classList.add(
+            bouton.classList.remove(
                 "selectionnee"
             );
 
-        }
 
-    });
+            if (
+                bouton.dataset.humeur ===
+                humeur
+            ) {
+
+                bouton.classList.add(
+                    "selectionnee"
+                );
+
+            }
+
+        }
+    );
 
 
     afficherHumeurChoisie(
@@ -973,7 +1346,10 @@ async function choisirHumeur(moment, humeur) {
 
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Erreur enregistrerHumeurs :",
+            error
+        );
 
 
         afficherMessageHumeur(
@@ -985,6 +1361,10 @@ async function choisirHumeur(moment, humeur) {
 
 }
 
+
+/* =====================================================
+   ENREGISTRER LES HUMEEURS
+===================================================== */
 
 async function enregistrerHumeurs() {
 
@@ -1047,7 +1427,7 @@ async function enregistrerHumeurs() {
                 method: "POST",
 
                 body: {
-                    date: date,
+                    date,
                     ...donnees
                 }
             }
@@ -1058,7 +1438,14 @@ async function enregistrerHumeurs() {
 }
 
 
-function afficherHumeurChoisie(moment, humeur) {
+/* =====================================================
+   AFFICHER HUMEUR CHOISIE
+===================================================== */
+
+function afficherHumeurChoisie(
+    moment,
+    humeur
+) {
 
     const element =
         document.getElementById(
@@ -1066,13 +1453,15 @@ function afficherHumeurChoisie(moment, humeur) {
         );
 
 
-    if (!element)
+    if (!element) {
         return;
+    }
 
 
     if (!humeur) {
 
-        element.innerHTML = "";
+        element.innerHTML =
+            "";
 
         return;
 
@@ -1080,12 +1469,45 @@ function afficherHumeurChoisie(moment, humeur) {
 
 
     element.innerHTML = `
-        ${humeur}
+        ${echapperHTML(humeur)}
         <span>Choisi ❤️</span>
     `;
 
+
+    const boutons =
+        document.querySelectorAll(
+            `.humeur[data-moment="${moment}"]`
+        );
+
+
+    boutons.forEach(
+        bouton => {
+
+            bouton.classList.remove(
+                "selectionnee"
+            );
+
+
+            if (
+                bouton.dataset.humeur ===
+                humeur
+            ) {
+
+                bouton.classList.add(
+                    "selectionnee"
+                );
+
+            }
+
+        }
+    );
+
 }
 
+
+/* =====================================================
+   MESSAGE HUMEUR
+===================================================== */
 
 function afficherMessageHumeur(
     message,
@@ -1096,6 +1518,11 @@ function afficherMessageHumeur(
         document.getElementById(
             "messageHumeur"
         );
+
+
+    if (!element) {
+        return;
+    }
 
 
     element.textContent =
@@ -1109,6 +1536,10 @@ function afficherMessageHumeur(
 
 }
 
+
+/* =====================================================
+   CHARGER L'HUMEUR DU JOUR
+===================================================== */
 
 async function chargerHumeurDuJour() {
 
@@ -1132,8 +1563,25 @@ async function chargerHumeurDuJour() {
             result.length > 0
         ) {
 
-            humeurDuJour =
+            const donnees =
                 result[0];
+
+
+            humeurDuJour = {
+
+                reveil:
+                    donnees.reveil || null,
+
+                travail:
+                    donnees.travail || null,
+
+                apres_travail:
+                    donnees.apres_travail || null,
+
+                journee:
+                    donnees.journee || null
+
+            };
 
 
             afficherHumeurChoisie(
@@ -1141,15 +1589,18 @@ async function chargerHumeurDuJour() {
                 humeurDuJour.reveil
             );
 
+
             afficherHumeurChoisie(
                 "travail",
                 humeurDuJour.travail
             );
 
+
             afficherHumeurChoisie(
                 "apres_travail",
                 humeurDuJour.apres_travail
             );
+
 
             afficherHumeurChoisie(
                 "journee",
@@ -1158,11 +1609,57 @@ async function chargerHumeurDuJour() {
 
         }
 
+        else {
+
+            humeurDuJour = {
+
+                reveil: null,
+
+                travail: null,
+
+                apres_travail: null,
+
+                journee: null
+
+            };
+
+
+            afficherHumeurChoisie(
+                "reveil",
+                null
+            );
+
+            afficherHumeurChoisie(
+                "travail",
+                null
+            );
+
+            afficherHumeurChoisie(
+                "apres_travail",
+                null
+            );
+
+            afficherHumeurChoisie(
+                "journee",
+                null
+            );
+
+        }
+
     }
 
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Erreur chargerHumeurDuJour :",
+            error
+        );
+
+
+        afficherMessageHumeur(
+            "Impossible de charger les humeurs 😢",
+            true
+        );
 
     }
 
@@ -1171,9 +1668,9 @@ async function chargerHumeurDuJour() {
 
 function afficherHumeur() {
 
-    afficherPage("pageHumeur");
-
-    chargerHumeurDuJour();
+    ouvrirPage(
+        "pageHumeur"
+    );
 
 }
 
@@ -1184,15 +1681,24 @@ function afficherHumeur() {
 
 async function afficherHistorique() {
 
-    afficherPage(
+    ouvrirPage(
         "pageHistorique"
     );
 
+}
+
+
+async function chargerHistorique() {
 
     const historique =
         document.getElementById(
             "historique"
         );
+
+
+    if (!historique) {
+        return;
+    }
 
 
     historique.innerHTML =
@@ -1214,9 +1720,11 @@ async function afficherHistorique() {
         if (!result.length) {
 
             historique.innerHTML =
-                `<div class="vide">
+                `
+                <div class="vide">
                     Aucun historique pour le moment ❤️
-                </div>`;
+                </div>
+                `;
 
             return;
 
@@ -1224,61 +1732,96 @@ async function afficherHistorique() {
 
 
         historique.innerHTML =
-            result.map(jour => `
+            result
+                .map(
+                    jour => `
 
                 <div class="historique-card">
 
                     <div class="historique-date">
-
                         ${formaterDate(
                             jour.date
                         )}
+                    </div>
+
+                    <div class="historique-ligne">
+
+                        <span>
+                            🌅 Réveil
+                        </span>
+
+                        <strong>
+                            ${echapperHTML(
+                                jour.reveil || "—"
+                            )}
+                        </strong>
 
                     </div>
 
                     <div class="historique-ligne">
-                        <span>🌅 Réveil</span>
+
+                        <span>
+                            💼 Travail
+                        </span>
+
                         <strong>
-                            ${jour.reveil || "—"}
+                            ${echapperHTML(
+                                jour.travail || "—"
+                            )}
                         </strong>
+
                     </div>
 
                     <div class="historique-ligne">
-                        <span>💼 Travail</span>
+
+                        <span>
+                            🏠 Après travail
+                        </span>
+
                         <strong>
-                            ${jour.travail || "—"}
+                            ${echapperHTML(
+                                jour.apres_travail || "—"
+                            )}
                         </strong>
+
                     </div>
 
                     <div class="historique-ligne">
-                        <span>🏠 Après travail</span>
-                        <strong>
-                            ${jour.apres_travail || "—"}
-                        </strong>
-                    </div>
 
-                    <div class="historique-ligne">
-                        <span>🌙 Journée</span>
+                        <span>
+                            🌙 Journée
+                        </span>
+
                         <strong>
-                            ${jour.journee || "—"}
+                            ${echapperHTML(
+                                jour.journee || "—"
+                            )}
                         </strong>
+
                     </div>
 
                 </div>
 
-            `).join("");
+            `
+                )
+                .join("");
 
     }
 
     catch (error) {
 
-        console.error(error);
+        console.error(
+            "Erreur chargerHistorique :",
+            error
+        );
 
 
         historique.innerHTML =
-            `<div class="vide erreur">
+            `
+            <div class="vide erreur">
                 Impossible de charger l'historique 😢
-            </div>`;
+            </div>
+            `;
 
     }
 
@@ -1291,7 +1834,9 @@ async function afficherHistorique() {
 
 function afficherSouvenirs() {
 
-    afficherPage("pageSouvenirs");
+    ouvrirPage(
+        "pageSouvenirs"
+    );
 
 }
 
@@ -1311,6 +1856,7 @@ const questionsJeu = [
         ]
     },
 
+
     {
         question:
             "Quel est mon plus grand rêve avec toi ?",
@@ -1321,17 +1867,25 @@ const questionsJeu = [
         ]
     },
 
+
     {
         question:
             "À quoi ressemble ma journée parfaite avec toi ?",
 
         reponses: [
+
             "cinéma avec des bubble tea et finir dans un airbnb à dormir ensemble",
+
             "cinema avec des bubble tea et finir dans un airbnb a dormir ensemble",
+
             "cinéma bubble tea airbnb",
+
             "cinema bubble tea airbnb"
+
         ]
+
     },
+
 
     {
         question:
@@ -1342,16 +1896,23 @@ const questionsJeu = [
         ]
     },
 
+
     {
         question:
             "Qu'est-ce qui peut directement me mettre de mauvaise humeur ?",
 
         reponses: [
+
             "quon me parle mal",
+
             "qu on me parle mal",
+
             "parler mal"
+
         ]
+
     },
+
 
     {
         question:
@@ -1367,6 +1928,10 @@ const questionsJeu = [
 
 let questionsDuJour = [];
 
+
+/* =====================================================
+   QUESTIONS DU JOUR
+===================================================== */
 
 function creerQuestionsDuJour() {
 
@@ -1400,21 +1965,30 @@ function creerQuestionsDuJour() {
 
 
     questionsDuJour =
-        melange.slice(0, 3);
+        melange.slice(
+            0,
+            3
+        );
 
 }
 
+
+/* =====================================================
+   AFFICHER JEU
+===================================================== */
 
 function afficherJeu() {
 
-    afficherPage("pageJeu");
-
-    creerQuestionsDuJour();
-
-    afficherQuestions();
+    ouvrirPage(
+        "pageJeu"
+    );
 
 }
 
+
+/* =====================================================
+   AFFICHER QUESTIONS
+===================================================== */
 
 function afficherQuestions() {
 
@@ -1424,9 +1998,15 @@ function afficherQuestions() {
         );
 
 
+    if (!zone) {
+        return;
+    }
+
+
     zone.innerHTML =
-        questionsDuJour.map(
-            (question, index) => `
+        questionsDuJour
+            .map(
+                (question, index) => `
 
                 <div class="message-box">
 
@@ -1436,7 +2016,9 @@ function afficherQuestions() {
 
                     <p>
                         <strong>
-                            ${question.question}
+                            ${echapperHTML(
+                                question.question
+                            )}
                         </strong>
                     </p>
 
@@ -1451,14 +2033,21 @@ function afficherQuestions() {
                 </div>
 
             `
-        ).join("");
+            )
+            .join("");
 
 }
 
 
+/* =====================================================
+   NORMALISER TEXTE
+===================================================== */
+
 function normaliserTexte(texte) {
 
-    return texte
+    return String(
+        texte || ""
+    )
 
         .toLowerCase()
 
@@ -1474,10 +2063,19 @@ function normaliserTexte(texte) {
             ""
         )
 
+        .replace(
+            /\s+/g,
+            " "
+        )
+
         .trim();
 
 }
 
+
+/* =====================================================
+   VALIDER JEU
+===================================================== */
 
 function validerJeu() {
 
@@ -1493,8 +2091,9 @@ function validerJeu() {
                 );
 
 
-            if (!input)
+            if (!input) {
                 return;
+            }
 
 
             const reponse =
@@ -1531,6 +2130,11 @@ function validerJeu() {
         document.getElementById(
             "resultatJeu"
         );
+
+
+    if (!resultat) {
+        return;
+    }
 
 
     let message;
@@ -1592,13 +2196,19 @@ function obtenirDateLocale() {
     const mois =
         String(
             maintenant.getMonth() + 1
-        ).padStart(2, "0");
+        ).padStart(
+            2,
+            "0"
+        );
 
 
     const jour =
         String(
             maintenant.getDate()
-        ).padStart(2, "0");
+        ).padStart(
+            2,
+            "0"
+        );
 
 
     return `${annee}-${mois}-${jour}`;
@@ -1608,16 +2218,24 @@ function obtenirDateLocale() {
 
 function formaterDate(date) {
 
-    if (!date)
+    if (!date) {
         return "";
+    }
 
 
     const vraieDate =
         new Date(date);
 
 
-    if (isNaN(vraieDate))
+    if (
+        isNaN(
+            vraieDate.getTime()
+        )
+    ) {
+
         return date;
+
+    }
 
 
     return vraieDate.toLocaleDateString(
@@ -1634,7 +2252,9 @@ function formaterDate(date) {
 
 function echapperHTML(texte) {
 
-    return String(texte)
+    return String(
+        texte || ""
+    )
 
         .replace(
             /&/g,
@@ -1665,18 +2285,16 @@ function echapperHTML(texte) {
 
 
 /* =====================================================
-   INITIALISATION
+   COMPTEUR
 ===================================================== */
 
-afficherPage("accueil");
-
 mettreAJourCompteur();
+
 
 setInterval(
     mettreAJourCompteur,
     1000
 );
-
 
 </script>
 
